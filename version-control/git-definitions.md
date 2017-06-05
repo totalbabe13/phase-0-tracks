@@ -17,3 +17,6 @@
 * What is a merge conflict?
 
 -A merge is when you combine modified, or altered code to a pre-existing version of itself. Sometimes, there are logic issues with the way the language is structured, they way you've written the code, and wether it can be expressed in git. If git can resolve what you have written and are trying to merge, it will notify you that it has a "merge conflict". It seems to me like a an expression of where you've navigated outside of the logic capacity of the language???
+
+
+Leonardo kaplan / Monday June 5th, 2017
