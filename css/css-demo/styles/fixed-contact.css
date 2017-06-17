@@ -18,7 +18,11 @@ section#contact-info p {
   padding-right: 20px;
   padding-left: 20px;
   border-right: 2px solid black;
-}
+} 
+
+
+/*  ^ [this is when there is a space between the element selectors] ->  
+Any <p> tag that is the decendant, or NESTSED instide of a section with this ID tag */
 
 /* We use the last-of-type selector
 to avoid the appearance of an extra
@@ -26,4 +30,7 @@ border. */
 
 section#contact-info p:last-of-type {
   border-right: none;
+
 }
+
+/* LOOK UP LATER: ;
