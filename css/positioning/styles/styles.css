@@ -3,13 +3,38 @@
 .test {
 	color: red;
 }
+.father {
+	margin: auto;
+	display:block;
+	border: 1px solid green
 
-.octopus {
+}
+
+.child {
 	
+	border: 1px solid red; /* <---- created a border, to see the edges of this element clearly */
+	display:block;/* <--- Display it like a block element  */
+	margin: auto;  /*  <---  used the auto value for the margin property to center it on the line */
+	margin-top: 100px; /* lowered our buddy down some */
+	
+}		
+
+.child-2 {
 	border: 1px solid red;
 	display: block;
 	margin: auto;
-	margin-top: 50px;
-    
-	
+	position: relative;
+	bottom: 190px;		
+
 }
+
+.child-3{
+	border: 1px solid red;
+	display: block;
+	margin: auto;
+	position: relative;
+	bottom: 410px;
+}
+
+
+
