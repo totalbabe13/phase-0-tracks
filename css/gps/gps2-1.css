@@ -1,0 +1,81 @@
+
+body{
+
+	background-image: url(violet_hour.jpg); 
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+ }   
+
+.test{
+	color: red;
+}
+
+.header{
+	display: block;
+	margin: 2px;
+	border: solid white 3px;
+	padding: 5px;
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+
+}
+
+.header h1{
+	text-decoration: underline;
+}
+
+
+.left_column{
+	display: inline-block;
+	vertical-align: top;
+	width: 45%;
+	margin: 1%;
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;	
+	border: solid white 2px;
+
+}
+
+.left_column h2{
+	text-decoration: underline;
+}
+
+.right_column{
+
+	display: inline-block;
+	vertical-align: top;
+	width: 45%;
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	margin-left: 5%;
+	margin-top: 9px;	
+	border: solid white 2px;
+
+}
+
+.right_column h2{
+	text-decoration: underline;
+}
+
+.footer{
+	display: block;
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	border: solid white 2px;
+
+}
+
+
+
+
+
+
+
