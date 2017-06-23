@@ -1,0 +1,150 @@
+#4.2 - Algorithms - Leonardo Kaplan
+
+#write an algorithm where a robot uses an elevator in Pseudocode
+
+#----
+
+# (assuming that your already standing infornt of the elevator.)
+
+
+#Lift hand and push button UNTIL the button light has turn on.
+
+#Wait UNTIL doors open. IF doors open, walk in and turn around.
+
+#Recall the NUMBER of the floor you're going to
+
+#Face the new button panel(with numbers) 
+
+#read numbers (1-18). 
+
+#select RECALLED number.
+
+#wait UNTIL doors open
+
+#exit elevator
+
+#end
+
+# - - - - - - - - - - - - - - - - - - - -
+
+#release 1: EVERYDAY TASKS:
+
+# Buying coffee:
+
+#ENTER the coffee shop
+#SEARCH for the CASH register
+#move towards it UNTIL you are in front
+#ASK is anybody here?
+	#IF no one is present, 
+	#WAIT UNTIL ATTTENDANT = present
+
+       #When ATTENDANT = present
+
+       #ORDER = 0
+
+       #ORDER =(ORDER +1) UNTIL
+       #ORDER = 2
+
+       #END
+
+    #ATTENDANT = 0
+    #PAY = ATTENDANT +1$
+
+		#PAY UNTIL ATTENDANT =3$
+		#END  
+	#END	   
+SEARCH for EXIT.
+MOVE to EXIT until EXIT = OUT
+
+
+#  - - - - - - - - - - - - - - - - - - - - -
+
+# Finding Keys:
+
+DEFINE dimensions of ROOM (object)
+
+ROOM = (walls x 4) + FURNITURE
+
+FURNITURE = (table, chairs x 2, desk, shelf)
+
+FOUND KEYS = 0
+
+ SEARCHING function:
+
+ 		TAKE FURNITURE make list:
+
+	 		TABLE
+ 			CHAIR 1
+ 			CHAIR 2
+ 			DESK
+ 			SHELF
+
+ 			IF TABLE = (TABLE + KEYS)
+
+ 				FOUND KEYS = 1
+
+ 			IF CHAIR1 = (CHAIR1 + KEYS)
+
+ 				FOUND KEYS = 1
+
+ 			IF CHAIR 2 = (CHAIR2 + KEYS)
+ 				
+ 				FOUND KEYS = 1
+
+ 			IF DESK = (DESK + KEYS)
+
+ 				FOUND KEYS = 1
+
+ 			IF SHELF = (SHELF + KEYS)
+
+ 				FOUND KEYS = 1		
+
+ 		SEARCH UNTIL FOUND KEYS = 1
+
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+	
+
+
