@@ -18,15 +18,25 @@ puts
 puts
 
 puts 'Question Number 1: What is your name? '
-first_question = gets.chomp
+name_of_person = gets.chomp
 puts
-puts 'Very good, nice to meet you ' + first_question +'.'
+puts 'Very good, nice to meet you ' + name_of_person +'.'
 
 puts
 puts
 
-puts 'Question Number 2: How old are you? What year were you born? (please answer with your age and birth year separarted by a comma) '
-second_question = gets.chomp
+puts 'Question Number 2: How old are you? What year were you born? 
+(please answer with your birth year ) ' #numeric/integer value
+age_of_person = gets.chomp
+
+	if age_of_person.to_i >= 1960 #true?
+	   age_of_person = true
+
+	else age_of_person.to_i <= 1960
+		  age_of_person = false
+
+	end		  
+	   	   
 puts 
 puts 'Oh I see...Let me just write that one down.'
 
@@ -34,22 +44,21 @@ puts
 puts
 
 puts 'Question Number 3: Our company cafeteria serves garlic bread. Should we order some for you? (y/n) '
-third_question = gets.chomp
+garlic_allergy = gets.chomp #yes or no value 
 puts 'ok you got it.'
 
 puts
 puts
 
 puts 'Question Number 4: Would you like to enroll in the company’s health insurance? (it\'s got FULL dental...y/n)'
-fourth_question = gets.chomp
-puts 'great!, ok thank you for you\'re time!' 
+health_insurance_prefrence = gets.chomp
+puts 'great!, ok thank you for you\'re time!' #yes or no value
 
 
-puts first_question
-puts second_question
-puts third_question
-puts fourth_question
+age_of_person_vampire = false
 
+puts age_of_person && age_of_person_vampire 
+puts age_of_person || age_of_person_vampire 
 
 
 
