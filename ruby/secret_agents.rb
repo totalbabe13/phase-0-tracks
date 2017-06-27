@@ -26,31 +26,35 @@
 
 # "a".next ----> returns "b" value
 
-#what value does a space character have?
+#what value does a space character have? USE the index method
 
 #step1 retrieve string
-
-
-
-
 #step2 separte string into letters
-
-given_word = "example".chars
-puts given_word
-puts
-new_letter = given_word.last 
-puts new_word =[]
-
-new_word.push new_letter.next 
-
-puts new_word
-
 #step3 change/ each letter
-
 #step4 combine letters back into word
 
 
+puts 'Hello, and welcome to ENCRYTOMATIC' #welcome interface dialog
+puts
+puts 'Please enter a word you would like encrypted and press ENTER:' 
 
+index = 0
+secret_password = gets.chomp #ask user for word
+puts "Length of password is #{secret_password.length} letters." #(sample code: displays length of word
+
+while index < secret_password.length
+  p secret_password[index]
+  index += 1
+end
+
+
+index = 0
+while index < secret_password.length
+  secret_password[index] = secret_password[index].next!
+  index += 1
+end
+
+puts secret_password
 
 
 
