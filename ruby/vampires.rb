@@ -97,11 +97,13 @@ puts 'great!, ok thank you for you\'re time!' #yes or no value
 puts
 puts 'please List you allergies, you can type each one in, and press ENTER, when you are finished, type in DONE.'
   allergies = gets.chomp
-  if allergies == 'sunshine' 
-      puts '** BURSTS INTO FLAMES ***'
-  end    
+  
+     
    until allergies == 'DONE'
     allergies = gets.chomp
+    if allergies == 'sunshine' 
+      puts '** BURSTS INTO FLAMES ***'
+    end  
    end  
   
   amount_of_employees = (amount_of_employees.to_i-1)
@@ -127,7 +129,7 @@ puts
 #If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
   ###end  
   
-puts
+puts"Actually, never mind! What do these questions have to do with anything? Let\'s all be friends."
 puts
 
 
