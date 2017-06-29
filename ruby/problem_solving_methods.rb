@@ -1,15 +1,16 @@
-array_1 = ['ana','beth','carmen','denis','eric','fred','gary','herman']
+array_1 = [24,7,0,420,666,7,11,69]
 
 
-def item_searcher (special)
-  
-  special.each do |name|
-  #puts "This #{name}"
-  'eric' == "#{name}"
-      if "#{name}" == 'eric'
-      puts 'ITS A MATCH!'
-      end
+def special_method(array_1,item)
+i = 0
+while array_1[i] != item
+i += 1
+   if array_1[i] == item
+     p i
+    break
+   end
+     
+    end 
   end
-end   
-
-item_searcher array_1
+ 
+ special_method(array_1,420)
