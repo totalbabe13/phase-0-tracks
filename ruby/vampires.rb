@@ -21,21 +21,40 @@ puts
 puts 'Very good, nice to meet you ' + name_of_person +'.'
 puts
 puts
-puts 'Question Number 2: How old are you? What year were you born? 
-      (please answer with your birth year ) ' #numeric/integer value converted to boolean
-      age_of_person = gets.chomp
-
-	if age_of_person.to_i >= 1900 #true?
-	   age_of_person = true
-	   puts age_of_person
-
-	else age_of_person.to_i <= 1900
-		  age_of_person = false
-      puts age_of_person
-	end		  
-	   	   
+#  - - - - - - - - - - - - - - - - - AGE VERIFICATION SECTION  - - - - - - - - - - - - - - 
+current_year =Time.now.year 
 puts 
-puts 'Oh I see...Let me just write that one down.'
+puts
+puts
+puts 'Question Number 2: How old are you? First, Please enter your age'
+      age_of_person = gets.chomp
+     
+puts "so you are #{age_of_person} years old. Very good. Now enter the year you were born in:"
+      birth_year = gets.to_i
+      
+puts "You were born in the year #{birth_year}"
+
+birth_year_check =  (current_year.to_i - age_of_person.to_i)
+age_check       =  (current_year.to_i - birth_year.to_i)
+puts
+puts
+
+  if birth_year_check == birth_year
+    birth_year = true
+  elsif birth_year_check > birth_year 
+    birth_year = true 
+    puts "OH! your birthday is coming up!"
+  else birth_year_check < current_year
+    birth_year = false
+    
+  end 
+
+# NOTE: THE VARIABLE to compare later is the boolean declared for birth_year
+
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#  - - - - - - - - - - - - - - - - - GARLIC ALLEGRY VERIFICATION SECTION  - - - - - - - - - - - - - - 
+puts 
+puts 
 puts
 puts
 
@@ -54,6 +73,11 @@ puts 'ok you got it.'
 
 puts
 puts
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+#  - - - - - - - - - -HEALTH INSURANCE VERIFICATION SECTION  - - - - - - - - - - - - - - 
+puts 
+
 puts 'Question Number 4: Would you like to enroll in the company’s       health insurance? (it\'s got FULL dental...y/n)'
       health_insurance_prefrence = gets.chomp
 puts 'great!, ok thank you for you\'re time!' #yes or no value
@@ -66,6 +90,9 @@ puts 'great!, ok thank you for you\'re time!' #yes or no value
 		   puts health_insurance_prefrence
 	end	  	
 
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+#  - - - - - - - - - - - - - - - - - - COMPARISONS / BOOLEANS - - - - - - - -
 
 
 #WE NEED FOUR OUTPUTS: 
@@ -76,24 +103,27 @@ puts 'great!, ok thank you for you\'re time!' #yes or no value
   #4 - INCONCLUSIVE
 
 
-  if (age_of_person && garlic_allergy) && health_insurance_prefrence == false
+  if (birth_year && garlic_allergy) && health_insurance_prefrence == false
      puts ' This is vampire, not a human being. '
   end   
   
   
-  if  (age_of_person && garlic_allergy) && health_insurance_prefrence == true
+  if  (birth_year && garlic_allergy) && health_insurance_prefrence == true
      puts 'This is a human being, not a vampire.'
   end   
   
-  if age_of_person && (garlic_allergy || health_insurance_prefrence) == true
+  if birth_year && (garlic_allergy || health_insurance_prefrence) == true
      puts ' This person is probably a human being.'
   end
     
-  if  age_of_person && (garlic_allergy || health_insurance_prefrence) == false
+  if  birth_year && (garlic_allergy || health_insurance_prefrence) == false
      puts ' Results inconclusive...'
   end
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+#  - - - - - - - - - - - - - - - - - - - - ALLEGIRES QUESTIONS- - - - - - - - - - - - - - 
    
-  puts
+puts
 puts
 puts 'please List you allergies, you can type each one in, and press ENTER, when you are finished, type in DONE.'
   allergies = gets.chomp
@@ -106,6 +136,10 @@ puts 'please List you allergies, you can type each one in, and press ENTER, when
     end  
    end  
   
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+#  - - - - - - - - - - - - - - - - - - - - END OF EMPLOYEE PROCESSING LOOP- - - - - - - - -
+
   amount_of_employees = (amount_of_employees.to_i-1)
 end #end employee loop 
   
