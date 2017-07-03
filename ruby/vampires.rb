@@ -16,8 +16,10 @@ gets
 puts 
 puts
 puts 'Question Number 1: What is your name? '
-name_of_person = gets.chomp
-puts
+      name_of_person = gets.chomp
+      subject_name = name_of_person == 'Drake Cula'  
+      subject_name_2 = name_of_person == 'Tu Fang'
+puts  
 puts 'Very good, nice to meet you ' + name_of_person +'.'
 puts
 puts
@@ -27,29 +29,14 @@ puts
 puts
 puts
 puts 'Question Number 2: How old are you? First, Please enter your age'
-      age_of_person = gets.chomp
-     
-puts "so you are #{age_of_person} years old. Very good. Now enter the year you were born in:"
-      birth_year = gets.to_i
+      age_given = gets.to_i
       
-puts "You were born in the year #{birth_year}"
+puts "so you are #{age_given} years old. Very good. Now enter the year you were born in:"
+      birth_year = gets.to_i
+     
+subject_age =  (current_year - birth_year) == age_given || ((current_year - 1) -birth_year) == age_given
+#if subject_age true, human, if subject age false =VAMP
 
-birth_year_check =  (current_year.to_i - age_of_person.to_i)
-age_check       =  (current_year.to_i - birth_year.to_i)
-puts
-puts
-
-  if birth_year_check == birth_year
-    birth_year = true
-  elsif birth_year_check > birth_year 
-    birth_year = true 
-    puts "OH! your birthday is coming up!"
-  else birth_year_check < current_year
-    birth_year = false
-    
-  end 
-
-# NOTE: THE VARIABLE to compare later is the boolean declared for birth_year
 
 #  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 #  - - - - - - - - - - - - - - - - - GARLIC ALLEGRY VERIFICATION SECTION  - - - - - - - - - - - - - - 
@@ -59,18 +46,11 @@ puts
 puts
 
 puts 'Question Number 3: Our company cafeteria serves garlic bread.      Should we order some for you? (y/n) '
-      garlic_allergy = gets.chomp #yes or no value convert to boolean
+      garlic_allergy = gets.chomp 
 puts 'ok you got it.'
-
-	if   garlic_allergy == 'y'
-		   garlic_allergy = true
-       puts garlic_allergy
-	else garlic_allergy == 'n'
-		   garlic_allergy = false
-		   puts garlic_allergy
-		
-	end
-
+  
+  garlic_prefrence = garlic_allergy == "y" || garlic_allergy == "Y"
+ 
 puts
 puts
 #  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -81,44 +61,62 @@ puts
 puts 'Question Number 4: Would you like to enroll in the company’s       health insurance? (it\'s got FULL dental...y/n)'
       health_insurance_prefrence = gets.chomp
 puts 'great!, ok thank you for you\'re time!' #yes or no value
-	if   health_insurance_prefrence == 'y'
-		   health_insurance_prefrence = true
-       puts health_insurance_prefrence
-       
-	else health_insurance_prefrence = 'n'
-		   health_insurance_prefrence = false
-		   puts health_insurance_prefrence
-	end	  	
+puts
+
+health_prefrence = health_insurance_prefrence == 'y' || health_insurance_prefrence == 'Y'
 
 #  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 #  - - - - - - - - - - - - - - - - - - COMPARISONS / BOOLEANS - - - - - - - -
-
-
+#puts 'test values'
+#puts
+#puts 'age value return'
+#puts subject_age
+#puts
+#puts 'garlic_prefrence return'
+#puts garlic_prefrence
+#puts
+#puts 'health_prefrence return'
+#puts health_prefrence
+#puts
+#puts 'name assesment'
+#puts subject_name
 #WE NEED FOUR OUTPUTS: 
 
   #1 - This person is a VAMPIRE 
   #2 - This person is a HUMAN
   #3 - this person is PROBABLY a VAMPIRE
   #4 - INCONCLUSIVE
+puts 
+puts 'Conlusion:'
 
-
-  if (birth_year && garlic_allergy) && health_insurance_prefrence == false
-     puts ' This is vampire, not a human being. '
-  end   
+  if subject_age && (garlic_prefrence || health_prefrence) 
+    result = 'Probably not a vampire.'
   
-  
-  if  (birth_year && garlic_allergy) && health_insurance_prefrence == true
-     puts 'This is a human being, not a vampire.'
-  end   
-  
-  if birth_year && (garlic_allergy || health_insurance_prefrence) == true
-     puts ' This person is probably a human being.'
-  end
+  elsif !subject_age && (garlic_prefrence || health_prefrence)
+    result ='Probably a vampire.'
     
-  if  birth_year && (garlic_allergy || health_insurance_prefrence) == false
-     puts ' Results inconclusive...'
+  elsif !subject_age && (!garlic_prefrence && !health_prefrence)
+    result ='Almost certainly a vampire.'  
+  
+  else result = "INCONCLUSIVE RESULTS"
+  
   end
+  
+  if    subject_name   == true
+    result = 'Definitely a vampire'
+  elsif subject_name_2 == true 
+    result = 'Definitely a vampire.'
+  end  
+    
+    
+
+  
+  puts result
+     
+  
+  
+ 
 #  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 #  - - - - - - - - - - - - - - - - - - - - ALLEGIRES QUESTIONS- - - - - - - - - - - - - - 
@@ -133,6 +131,8 @@ puts 'please List you allergies, you can type each one in, and press ENTER, when
     allergies = gets.chomp
     if allergies == 'sunshine' 
       puts '** BURSTS INTO FLAMES ***'
+      puts 'Conclusion:'
+      puts 'Definitely a vampire'
     end  
    end  
   
@@ -145,31 +145,5 @@ end #end employee loop
   
 puts
 puts
-
-
-#In addition to the other questions in the survey, use a loop to ask the employee to name any allergies, one at a time. The employee can type “done” when finished.
-
-#As long as the allergy is not “sunshine,” continue the loop for as long as is needed. If at any point the employee lists “sunshine” as an allergy, skip directly to the result of “Probably a vampire.”
-
-
-
-#If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
-
-  #if (age_of_person && garlic bread) || health_insurance_prefrence =
-   #false
-   #puts 'This is a vampire, not a human being'
-  #end
-  
-#If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
-  ###end  
-  
 puts"Actually, never mind! What do these questions have to do with anything? Let\'s all be friends."
 puts
-
-
-
-
-
-
-
-
