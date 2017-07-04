@@ -33,7 +33,20 @@ puts 'How many bedrooms does you home include?'
 client_assesment[:client_bedrooms] = gets.to_i
 puts
 #p client_assesment[:client_bedrooms] 
-
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#UPDATES/CORRECTIONS - reviewing information -printing out hash 
+puts 'Please, review the following information and make any corrections if necessary:'
+puts
+puts
+puts "Your full name is : #{client_assesment[:client_name]}"
+puts
+puts "Your current age is : #{client_assesment[:client_age]}"
+puts
+puts "You have this many children: #{client_assesment[:client_children]} " 
+puts
+puts "Your decor theme choice is : #{client_assesment[:client_decor_theme]}"
+puts
+puts "The number of bedrooms your home has : #{client_assesment[:client_bedrooms]}"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 #INTRO section / Hello, with brief explanation of use of program
