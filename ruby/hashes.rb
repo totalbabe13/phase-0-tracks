@@ -49,48 +49,106 @@ puts
 puts "The number of bedrooms your home has : #{client_assesment[:client_bedrooms]}"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+puts ' - - - - - - - - - - - - - - - - - - - - '
 puts 'Would you like to edit or change any of your answers?'
-puts 'If so, select the NUMBER corresponding to your answer, and re-enter your response.'
+puts 'If so, select the CATAGORY corresponding to your answer, and re-enter your response.'
 puts 'Or, simply press ENTER, to confirm your application.'
 puts
 puts 'Would you like to make any changes?' 
-puts 'Enter a number or press ENTER:'
-       response_edit = gets.to_i
-       if response_edit == 1
-         puts 'Please re-enter your name:'
-         new_name = gets.chomp
-         client_assesment[:client_name] = new_name
-         puts 
-         #puts client_assesment[:client_name]
-      elsif response_edit == 2
-         puts 'Please re-enter your age:'
-         new_age = gets.to_i
-         client_assesment[:client_name] = new_age
-         puts 
-         #puts client_assesment[:client_age] 
-      
-      elsif response_edit == 3
-         puts 'Please re-enter how many children you have:'
-         new_child = gets.to_i
-         client_assesment[:client_children] = new_child
-         puts 
-         #puts client_assesment[:client_children] 
-      
-      elsif response_edit == 4
-         puts 'Please re-enter your theme choice:'
-         new_theme = gets.to_i
-         client_assesment[:client_decor_theme] = new_theme
-         puts 
-         #puts client_assesment[:client_decor_theme] 
+puts
+puts 'Enter a CATAGORY or press ENTER :'
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - - 
+#1. how to turn strings into keys
+#2. assign symbols to key names
+#3. Re assign key values
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - -- - - - -
+#UPDATES/CORRECTIONS
+
+#ARE YOU SURE OF THE information is correct?
+
+#user would enter key name, and correction 
+#key value would re-re assign
+
+
+       response_edit = gets.chomp
+       #user input your_name'--> user accesses key
+       if response_edit == 'your_age'
+         find_key = response_edit.to_sym
+         puts 'Re-eneter you age:'
+         client_assesment[find_key] = gets.chomp
+         #test - puts client_assesment[find_key]
          
-      elsif response_edit == 5
-         puts 'Please re-enter your number of bedrooms:'
-         new_bedrooms = gets.to_i
-         client_assesment[:client_bedrooms] = new_bedrooms
-         puts 
-         #puts client_assesment[:client_bedrooms]    
+      elsif response_edit == 'your_name'
+         find_key = response_edit.to_sym
+         puts 'Re-eneter you full name:'
+         client_assesment[find_key] = gets.chomp
+         #test - puts client_assesment[find_key]
          
-       end 
+      elsif response_edit == 'children_number'
+         find_key = response_edit.to_sym
+         puts 'Re-eneter the number of children you have:'
+         client_assesment[find_key] = gets.chomp
+         #test - puts client_assesment[find_key]
+      
+      elsif response_edit == 'decor_theme'
+         find_key = response_edit.to_sym
+         puts 'Re-eneter your decor theme:'
+         client_assesment[find_key] = gets.chomp
+         #test - puts client_assesment[find_key]   
+      
+      elsif response_edit == 'bedrooms_number'
+         find_key = response_edit.to_sym
+         puts 'Re-eneter how many bedrooms you have:'
+         client_assesment[find_key] = gets.chomp
+         #test - puts client_assesment[find_key]
+      
+      elsif response_edit == ''
+      end
+      
+       
+
+#  - - - - - - - - - - - - - - - - - 
+#print out latest version of hash
+puts
+puts
+#puts client_assesment  --> prints out hash format
+#formatted into strings below:
+
+puts 'The application below is completed, thank you!'
+puts ' - - - - - - - - - - - - - - - - - - - - - - - -'
+puts
+puts "1.Your full name is : #{client_assesment[:your_name]}"
+puts
+puts
+puts "2.Your current age is : #{client_assesment[:your_age]}"
+puts 
+puts
+puts "3.You have this many children: #{client_assesment[:children_number]} " 
+puts 
+puts
+puts "4.Your decor theme choice is : #{client_assesment[:decor_theme]}"
+puts 
+puts
+puts "5.The number of bedrooms your home has : #{client_assesment[:bedrooms_number]}"
+puts
+puts
+puts ' - - - - - - - - - - - - - - - - - - - - '
+puts 'Thank you, Good-bye!'
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+#---- LOOK THIS UP - how to use booleans in hashes - !!!!!
+#puts 'Is this the first home you\'ve owned? (Y/N)'
+#client_assesment[:client_first_home] = gets.chomp
+#puts
+#p client_assesment[:client_first_home]  
+
+#puts 'What is the name of your spouse, if you have one? (If none, enter NONE)'
+#client_assesment[:client_spouse] = gets.chomp
+#puts
+#p client_assesment[:client_spouse]  
+
+
 
 
 #INTRO section / Hello, with brief explanation of use of program
