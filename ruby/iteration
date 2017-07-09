@@ -1,0 +1,164 @@
+
+#ITERATION 5.3 
+
+
+an_array = [0,2,3,4,5,6,7,8,9,10]
+puts
+puts 'Original array:'
+p an_array
+puts
+puts '**AFTER USING --> .delete_if METHOD: '
+an_array.delete_if {|number| number < 5  }  
+p an_array
+puts
+puts
+
+#- - - - - 
+
+
+a_hash = {
+  ann:  'home',
+  dan:  'work',
+  ben:  'home',
+  fay:  'work',
+  beth: 'gym',
+  sam:  'store',
+  hope: 'work'
+}  
+
+puts 'Original hash:'
+p a_hash
+puts
+puts '**AFTER USING --> .delete_if METHOD: '
+a_hash.delete_if {|name,place| place == 'work'  }  
+p a_hash
+
+puts 
+puts
+puts
+puts ' -   -   -   -   -   -   -   -   -'
+puts 
+puts 
+puts
+
+
+another_array = [0,2,3,4,5,6,7,8,9,10]
+puts 'Original array:'
+p another_array
+puts
+puts '**AFTER USING --> select! METHOD:'  
+another_array.select! {|number| number.odd? } 
+p another_array 
+puts 
+puts
+
+#- - - - - 
+
+
+a_hash = {
+  ann:  'home',
+  dan:  'work',
+  ben:  'home',
+  fay:  'work',
+  beth: 'gym',
+  sam:  'store',
+  hope: 'work'
+}  
+ 
+puts 'Original hash:'
+p a_hash
+puts
+puts '**AFTER USING --> .select! METHOD: '
+a_hash.select! {|name,place| place == 'work'  }  
+p a_hash
+puts 
+puts
+
+puts 
+puts
+puts
+puts ' -   -   -   -   -   -   -   -   -'
+puts 
+puts 
+puts
+
+
+another_array = [0,2,3,4,5,6,7,8,9,10]
+puts 'Original array:'
+p another_array
+puts
+puts '**AFTER USING --> reject! METHOD:'  
+another_array.reject! {|number| number.odd? } 
+p another_array 
+puts 
+puts
+
+#- - - - - 
+
+
+a_hash = {
+  ann:  'home',
+  dan:  'work',
+  ben:  'home',
+  fay:  'work',
+  beth: 'gym',
+  sam:  'store',
+  hope: 'work'
+}  
+ 
+puts 'Original hash:'
+p a_hash
+puts
+puts '**AFTER USING --> .reject! METHOD: '
+a_hash.reject! {|name,place| place == 'work'  }  
+p a_hash
+puts 
+puts
+
+
+puts 
+puts
+puts
+puts ' -   -   -   -   -   -   -   -   -'
+puts 
+puts 
+puts
+
+
+another_array = [0,2,3,4,5,6,7,8,9,10]
+puts 'Original array:'
+p another_array
+puts
+puts '**AFTER USING --> keep_if METHOD:'  
+another_array.keep_if {|number| number.odd? } 
+p another_array 
+puts 
+puts
+
+#- - - - - 
+
+
+
+
+a_hash = {
+  ann:  'home',
+  dan:  'work',
+  ben:  'home',
+  fay:  'work',
+  beth: 'gym',
+  sam:  'store',
+  hope: 'work'
+}  
+ 
+puts 'Original hash:'
+p a_hash
+puts
+puts '**AFTER USING --> .keep_if METHOD: '
+a_hash.keep_if {|name,place| place == 'work'  }  
+p a_hash
+puts 
+puts
+
+
+
+
