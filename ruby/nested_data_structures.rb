@@ -1,16 +1,14 @@
-
-
-#BUILDING A GALLERY IN CHICAGO:
+  
 boyfriends_exhibitions = {
 	
 	gallery: works = { 
 		
-	  painting1: ['Chicago Sunset Abstract', 
+		 painting1: ['Chicago Sunset Abstract', 
 		             'Oil on Canvas', 
 		             '38 x 46', '2017', 
 		             '$11,000'],
 	  
-	  painting2: ['Birds Fly Over 290',
+	   painting2: ['Birds Fly Over 290',
 	               'Oil on Canvas', 
 	               '30 x 30', '2017', 
 	               '$9,000' ],
@@ -129,12 +127,28 @@ p boyfriends_exhibitions[:office][:flatfile]
 puts ' -  -  -  -  -  -  -  -  -  -  -'
 puts
 
+puts 'The new intern is asking what is stored in the racks:'
+puts
+p boyfriends_exhibitions[:storage_racks].each  {|medium| puts "This is where the #{medium} are stored."}
+puts ' -  -  -  -  -  -  -  -  -  -  -'
+puts
+
+
 puts
 puts 'The new intern is asking where are the photographs stored:'
 puts
-p boyfriends_exhibitions[:storage_racks][2]
+p boyfriends_exhibitions[:storage_racks].select! {|medium| medium == 'Photographs' }
 puts ' -  -  -  -  -  -  -  -  -  -  -'
 puts
+
+
+puts
+puts 'The gallery director is looking for the press releases:'
+puts
+p boyfriends_exhibitions[:office][:flatfile].reject! {|papers| papers != "Press release" }
+puts ' -  -  -  -  -  -  -  -  -  -  -'
+puts
+
 
 
 #p boyfriends_gallery[:gallery]
