@@ -7,17 +7,22 @@ def agent_name
   vowels      = ['a','e','i','o','u']
   
   pre_vowels  = ['d','h','n','t']
-  
-   
-  number_of_letters = agent.length  # 8
-  
-  
+ 
+ 
   code_array1 = agent.downcase.split('') 
   #transform string into array, separate characters 
   
   new_code_name = []
   
+  number_of_letters = code_array1.length 
+  
+  
   #p code_array1  # ["l", "e", "o", "n", "a", "r", "d", "o"]
+  
+  
+  
+  
+  while new_code_name.length != number_of_letters
   
   first_letter = code_array1.first
   #point to the first letter => 'l'
@@ -47,7 +52,7 @@ def agent_name
         first_letter= 'a'
         new_code_name.push(first_letter)
         
-      end
+  end
    #puts first_letter
    #puts new_code_name  
  
@@ -72,7 +77,7 @@ def agent_name
       elsif first_letter == 't'
         first_letter = 'v'
         new_code_name.push(first_letter)
-      end 
+  end 
       #puts first_letter
       #puts new_code_name
   
@@ -84,10 +89,13 @@ def agent_name
    #puts new_consonant #if regular consonant
    new_code_name.push(new_consonant)
    #puts new_code_name
-  
-  
-  
   end  
-   
-end
+
+code_array1.rotate! #changes the first letter of original array, puts next letter to be evaluated
+puts
+p new_code_name
+
+end #end of while   
+end #end of def 
 agent_name
+
