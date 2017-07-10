@@ -5,10 +5,10 @@
 #puts var.next.next
 
 def agent_name
-  agent = 'Teonardo' #Miupesfu
+  agent = 'Leonardo' #Miupesfu
   
   
-  not_vowels = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
+  not_vowels = ['b','c','f','g','j','k','l','m','p','q','r','s','v','w','x','y','z']
   
   vowels      = ['a','e','i','o','u']
   
@@ -32,18 +32,17 @@ def agent_name
   if vowels.any? {|letter| letter == first_letter} 
    #compare vowel array to the first letter (L), evaluates as false
    
-   puts first_letter #if vowel
+   #puts first_letter if vowel
   
   elsif pre_vowels.any? {|letter| letter == first_letter}
    
-   puts first_letter
+   #puts first_letter if pre_vowel 
   
   
- # elsif not_vowels.select {|consonant| consonant == first_letter}
-   #compare first letter to ALL consonants
-  # new_code_name = not_vowels.select {|consonant| consonant == first_letter}
-   #puts new_code_name
-   #puts first_letter
+  elsif not_vowels.select {|consonant| consonant == first_letter}
+   new_letter = first_letter.next
+   
+   #puts new_letter if regular consonant
   
   
   
