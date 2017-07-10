@@ -1,5 +1,8 @@
 puts
 puts 
+puts 'WELCOME SECRET AGENT'
+puts 'YOU have been selected for a top secret mission to find CARMEN SANDIEGO!'
+puts 'First things first, we need you to enter your first and last name into our ALIAS generator:'
 
 
 def agent_name
@@ -112,7 +115,10 @@ end #end of first while
 
 #puts final_alias.length
 #p final_alias.rotate
-
+puts
+puts
+puts 'YOUR NEW ALIAS IS:'
 p final_alias
+puts 'GOOD LUCK GUM SHOE!'
 end #end of def 
 agent_name
