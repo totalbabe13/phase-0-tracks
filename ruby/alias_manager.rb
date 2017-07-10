@@ -1,14 +1,27 @@
-#Alias Manager 5.5 Solo Challenge
-
-#Swapping the first and last name.
-#Changing all of the vowels (a, e, i, o, or u) to the next vowel in 'aeiou', and all of the consonants (everything else besides the vowels) to the next consonant in the alphabet. So 'a' would become 'e', 'u' would become 'a', and 'd' would become 'f'.
-
-#1.  gets a name from user - FIRST and LAST 
-
-puts 'Please enter your first name:' 
-agent_first_name = gets.chomp
-
-puts 'Please enter your last name:'
-agent_last_name  = gets.chomp
-
-puts " #{agent_first_name} #{agent_last_name}"
+def agent_name
+  
+  agent = 'Leonardo' 
+  
+  number_of_letters = agent.length 
+  
+  code_array1 = agent.downcase.split('')
+  
+  new_code_name = []
+  
+  
+  if code_array1[0] != 'a'||'e'||'i'||'o'||'u'
+    first_letter = code_array1.shift
+    puts code_array1
+    puts
+    puts first_letter
+    puts
+    new_letter = first_letter.next
+    puts new_letter
+    puts
+    new_code_name.push new_letter
+    puts new_code_name
+    
+    
+  end  
+end
+agent_name
