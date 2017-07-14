@@ -26,7 +26,11 @@ class Puppy
     puts ("*rolls over*")
     
   end
-
+#Add a dog_years method that takes an integer (of human years) and converts that number to dog years, returning a new integer.
+  #method: dog_years
+  #input: NUMBER of human years
+  #convert to dog years (multiplies human years times 7)
+  #output: Number of dog years
 end
 
 lassy= Puppy.new
