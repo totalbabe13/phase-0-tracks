@@ -9,15 +9,22 @@
 #If you haven't already, update your driver code to demonstrate that all of these methods work as expected.
 
 class Puppy
-
+# - - - - - - - - - - - - 
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
   end
 
+# - - - - - - - - - - - - 
   def speak(barks)
     puts ("WOOF!" * 3)
     barks
+  end
+# - - - - - - - - - - - - 
+
+  def roll_over
+    puts ("*rolls over*")
+    
   end
 
 end
@@ -26,4 +33,7 @@ lassy= Puppy.new
 
 lassy.fetch "ball"
 lassy.speak 3
+lassy.roll_over
+
+
 
