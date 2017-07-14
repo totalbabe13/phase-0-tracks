@@ -20,14 +20,14 @@ class Puppy
     puts ("WOOF!" * 3)
     barks
   end
-# - - - - - - - - - - - - 
 
+# - - - - - - - - - - - - 
   def roll_over
     puts ("*rolls over*")
     
   end
-#Add a dog_years method that takes an integer (of human years) and converts that number to dog years, returning a new integer.
-  #method: dog_years
+
+# - - - - - - - - - - - - 
   def dog_years(human_years)
   #input: NUMBER of human years
     dog_years = (human_years * 7)
@@ -36,6 +36,11 @@ class Puppy
   #output: Number of dog years
     end
 
+# - - - - - - - - - - - - 
+	def shakes(number_of_shakes)
+		doggy_shakes =("*Shakes*" *number_of_shakes)
+		puts "#{doggy_shakes} GOOD BOY!!!!"  
+	end
 
 end
 
@@ -45,6 +50,7 @@ lassy.fetch "ball"
 lassy.speak 3
 lassy.roll_over
 lassy.dog_years 5
+lassy.shakes 4
 
 
 
