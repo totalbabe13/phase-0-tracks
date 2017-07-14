@@ -28,9 +28,15 @@ class Puppy
   end
 #Add a dog_years method that takes an integer (of human years) and converts that number to dog years, returning a new integer.
   #method: dog_years
+  def dog_years(human_years)
   #input: NUMBER of human years
+    dog_years = (human_years * 7)
   #convert to dog years (multiplies human years times 7)
+    puts dog_years
   #output: Number of dog years
+    end
+
+
 end
 
 lassy= Puppy.new
@@ -38,6 +44,7 @@ lassy= Puppy.new
 lassy.fetch "ball"
 lassy.speak 3
 lassy.roll_over
+lassy.dog_years 5
 
 
 
