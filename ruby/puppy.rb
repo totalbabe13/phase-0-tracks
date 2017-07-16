@@ -60,6 +60,7 @@ def initialize
 	end
     
 # - - - - - - - - - - - - 
+end #end of class
 #In puppy_methods.rb, design and implement your own class below the Puppy class -- anything you'd like, 
 #but it should have an initialize method and at least two other instance methods. Then do the following:
 
@@ -78,15 +79,6 @@ def initialize
 
 
 
-end
-
-lassy= Puppy.new
-
-lassy.fetch "ball"
-lassy.speak 3
-lassy.roll_over
-lassy.dog_years 5
-lassy.shakes 4
 
 
 puppy_basket = []
@@ -95,8 +87,10 @@ puppy_basket = []
 pup_number = 0 
 #puppy counter
 
-new_pup = ('new_puppy' + pup_number.to_s) 
-#puppy namer
+puppy_basket.each do |pup|
+  pup = Puppy.new
+end
+
 
 
 
@@ -104,11 +98,24 @@ while puppy_basket.length. != 50
 #compare the number of values in puppy_basket array to 50
   pup_number = pup_number + 1 
   #add 1 puppy to to pup number 
+  
+  new_pup = ('new_puppy' + pup_number.to_s) 
+  #puppy namer
+  
+  new_pup = Puppy.new 
+  #create new instance of Puppy
+  
   puppy_basket.push(new_pup)
   #put puppy in basket
-  puts puppy_basket.length
+  #puts puppy_basket.length
   #count the puppies
 end 
+
+#p puppy_basket
+
+#puppy_basket.each do |pup|
+#  pup = Puppy.new
+#end
 
 
 
