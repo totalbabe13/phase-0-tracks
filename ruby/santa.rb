@@ -19,9 +19,12 @@
 
 class Santa
 
-  def initialize(gender)
-    @gender = gender
-    @ethnicity =  'white'
+  def initialize (gender,ethnicity)
+    @gender    = gender
+    @ethnicity =  ethnicity
+    @age = 0
+    @favorite_reindeer = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+ 
     #puts "initializing SANTA"
   end 
 # - - - - - - - - - - - - 
@@ -33,23 +36,19 @@ class Santa
 # - - - - - - - - - - - - 
   def speak
     puts ("HO! HO! HO! Haaaaaaapy Holidays!" * 3)
-    
   end
 
 # - - - - - - - - - - - - 
 
   def about
+    puts "New santa INFO:"
     puts "Gender: #{@gender}"
     puts "Ethnicity: #{@ethnicity}"
-  end #end of about method
-end#end of Santa Class  
+    puts " - - - - - - - - - - - - - - - - "
+    
+  end 
 
- new_santa = Santa.new("male")
- new_santa.about
- 
- puts " - - - - - - - - - - - - - - - - "
-
- 
+end #end of class
 
  
 
