@@ -111,11 +111,13 @@ while puppy_basket.length. != 50
   #count the puppies
 end 
 
-#p puppy_basket
+#p puppy_basket[5]  returns #<Puppy:0x00558cfc560340>
 
-#puppy_basket.each do |pup|
-#  pup = Puppy.new
-#end
+puppy_basket.each { |pup| pup.fetch "ball" } 
+#ask each puppy to fetch ball, prints "I brought back the #{toy}!" 
+
+puppy_basket.each { |pup| pup.roll_over }
+#ask each puyppy instance to roll over, prints "***rolls over**" for every instance in array of puppy
 
 
 
