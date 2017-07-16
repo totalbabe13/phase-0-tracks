@@ -6,10 +6,23 @@
 #Add a bit of code below your class declaration to check that you're able to initialize a Santa instance and call its methods.
 
 
-class santa
+#Update your Santa class with the following attributes:
 
-  def initializing
-    p "initializing SANTA"
+#gender, which will be a string passed in on initialization
+#ethnicity, which will be a string passed in on initialization
+
+#reindeer_ranking, an array of reindeer from most preferred to least preferred. 
+#This is not passed in on initialization; it simply gets a default value of 
+#["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+
+#age, which is not passed in on initialization and defaults to 0
+
+class Santa
+
+  def initialize(gender)
+    @gender = gender
+    @ethnicity =  'white'
+    #puts "initializing SANTA"
   end 
 # - - - - - - - - - - - - 
   def cookie_eating(cookie)
@@ -20,16 +33,24 @@ class santa
 # - - - - - - - - - - - - 
   def speak
     puts ("HO! HO! HO! Haaaaaaapy Holidays!" * 3)
-    hos
+    
   end
 
 # - - - - - - - - - - - - 
- end #end of class
 
- person_random = santa.new
+  def about
+    puts "Gender: #{@gender}"
+    puts "Ethnicity: #{@ethnicity}"
+  end #end of about method
+end#end of Santa Class  
 
- person_random.cookie_eating(Chocolate Chip)
+ new_santa = Santa.new("male")
+ new_santa.about
+ 
+ puts " - - - - - - - - - - - - - - - - "
 
- puts 
+ 
 
- person_random.speak
+ 
+
+ 
