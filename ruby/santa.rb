@@ -1,21 +1,15 @@
-#Eventually, your simulator will build thousands of Santas, but for now, start by defining a Santa class in phase-0-tracks/ruby/santa.rb. Your class should have three instance methods:
-
-#A speak method that will print "Ho, ho, ho! Haaaappy holidays!" (Santa has been working on being more inclusive.)
-#An eat_milk_and_cookies method that takes a cookie type (example: "snickerdoodle") as a parameter and prints "That was a good <type of cookie here>!" 
-#An initialize method that prints "Initializing Santa instance ...".
-#Add a bit of code below your class declaration to check that you're able to initialize a Santa instance and call its methods.
 
 
-#Update your Santa class with the following attributes:
+#Add three attribute-changing methods to your Santa class:
 
-#gender, which will be a string passed in on initialization
-#ethnicity, which will be a string passed in on initialization
+#celebrate_birthday should age Santa by one year.
+#get_mad_at can take a reindeer's name as an argument, and move that reindeer in last place in the reindeer rankings. Vixen knows what he did.
+#The @gender attribute should have a setter method that allows @gender to be reassigned from outside the class definition.
+#Add two "getter" methods as well:
 
-#reindeer_ranking, an array of reindeer from most preferred to least preferred. 
-#This is not passed in on initialization; it simply gets a default value of 
-#["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+#The method age should simply return @age.
+#The method ethnicity should return @ethnicity.
 
-#age, which is not passed in on initialization and defaults to 0
 
 class Santa
 
@@ -44,12 +38,72 @@ class Santa
     puts "New santa INFO:"
     puts "Gender: #{@gender}"
     puts "Ethnicity: #{@ethnicity}"
+    puts "Age: #{@age}"
     puts " - - - - - - - - - - - - - - - - "
     
   end 
+# - - - - - - - - - - - - 
+  #getter method for @age
+  def age 
+    @age 
+  end  
+   
+  #setter method for @age
+  def age= (new_age)
+    @age = new_age
+  end 
+
+    #setter method for gender
+  def gender= (new_gender)
+    @gender = new_gender
+  end   
+# - - - - - - - - - - - - 
+
+  def celebrate_birthday(new_age)
+     @age = (new_age + 1)
+     puts "Happy Birthday Santa"
+     
+  end
+# - - - - - - - - - - - - 
+  def get_mad_at(bad_reindeer)
+     @favorite_reindeer.delete_if {|reindeer| reindeer == bad_reindeer}
+     @favorite_reindeer.insert(-1, bad_reindeer)
+     puts
+     puts "Got mad at #{@favorite_reindeer[-1]}!!!"
+     puts
+     p @favorite_reindeer
+     puts " - - - - - - - - - - - - - - - "
+  end   
 
 end #end of class
 
- 
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+
+santas = []
+
+example_genders.length.times do |i|
+ santas << Santa.new(example_genders[i], example_ethnicities[i])
+end
+
+
+santas.each do |i|
+  i.about
+end  
+
+test_santa= Santa.new("male","Colombian")
+test_santa.age = 31
+test_santa.about
+
+test_santa.get_mad_at ("Vixen")
+test_santa.about
+
+test_santa.gender = "Newest Gender"
+test_santa.about
+
+
+
 
  
