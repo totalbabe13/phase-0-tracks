@@ -19,6 +19,13 @@ class List
     	@todo.push(task)
     	p @todo
     end
+    #- - - - - - - - - - - - - - - - - - - - - 
+
+    def delete_item(index)
+    	@todo.delete_at(0)
+    	p @todo
+    end	
+
  end   
 
 #list_test = List.new 
