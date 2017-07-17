@@ -14,10 +14,10 @@
 class Santa
   attr_accessor :age, :gender
 
-  def initialize (gender,ethnicity)
+  def initialize (gender,ethnicity,age)
     @gender    = gender
     @ethnicity =  ethnicity
-    @age = 0
+    @age = age.to_i
     @favorite_reindeer = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
  
     #puts "initializing SANTA"
@@ -83,18 +83,31 @@ example_genders = ["agender", "female", "bigender", "male", "female", "gender fl
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 
+
+#Use our array of example genders and an array of example ethnicities (and feel free to add to it if you like -- each array could have a lot more options in it!) to create your Santas with a randomly selected gender and a randomly selected ethnicity. (How do you randomly select an array item? The Array documentation should be able to help you out there!)
+#Set your new Santa's age to a random number between 0 and 140.
+#No need to store your Santas in a data structure, but your program should print out the attributes of each Santa using the instance methods that give you access to that data.
+
+
+
+
+
 santas = []
 
-example_genders.length.times do |i|
- santas << Santa.new(example_genders[i], example_ethnicities[i])
+while santas.length != 100
+
+ santas << Santa.new(example_genders[rand 0..6], example_ethnicities[ rand 0..6], (rand 0..140))
+
 end
 
 
 santas.each do |i|
-  i.about
+ i.about
 end  
 
-test_santa= Santa.new("male","Colombian")
+
+
+test_santa= Santa.new("male","Colombian",7)
 test_santa.age = 31
 test_santa.about
 
@@ -104,7 +117,4 @@ test_santa.about
 test_santa.gender = "Newest Gender"
 test_santa.about
 
-
-
-
- 
+puts "There are #{santas.length} new santas"
