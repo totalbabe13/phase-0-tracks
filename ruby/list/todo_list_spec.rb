@@ -10,14 +10,15 @@ describe List do
    expect(list.get_items("do the dishes", "mow the lawn")).to eq ["do the dishes", "mow the lawn"]
   end
   
-end
 
-  #it "adds an item to the list" do
+
+  it "adds an item to the list" do
     #list.add_item("mop")
-   # expect(list.get_items).to eq ["do the dishes", "mow the lawn", "mop"]
-  #end
+    list.get_items("do the dishes", "mow the lawn")
+    expect(list.add_item('mop')).to eq ["do the dishes", "mow the lawn", "mop"]
+  end
 
-
+end
 
 
 
