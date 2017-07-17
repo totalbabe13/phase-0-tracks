@@ -13,9 +13,14 @@ describe List do
 
 
   it "adds an item to the list" do
-    #list.add_item("mop")
     list.get_items("do the dishes", "mow the lawn")
     expect(list.add_item('mop')).to eq ["do the dishes", "mow the lawn", "mop"]
+  end
+
+  it "deletes an item" do
+    #list.delete_item("do the dishes")
+    list.get_items("do the dishes","mow the lawn")
+    expect(list.delete_item(0)).to eq ["mow the lawn"]
   end
 
 end
