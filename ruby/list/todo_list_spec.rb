@@ -9,8 +9,6 @@ describe List do
   it "stores the list items given on initialization" do
    expect(list.get_items("do the dishes", "mow the lawn")).to eq ["do the dishes", "mow the lawn"]
   end
-  
-
 
   it "adds an item to the list" do
     list.get_items("do the dishes", "mow the lawn")
@@ -21,6 +19,11 @@ describe List do
     #list.delete_item("do the dishes")
     list.get_items("do the dishes","mow the lawn")
     expect(list.delete_item(0)).to eq ["mow the lawn"]
+  end
+
+  it "retrieves an item by index" do
+    list.get_items("do the dishes", 'mop')
+    expect(list.choose_item("do the dishes")).to eq "do the dishes"
   end
 
 end

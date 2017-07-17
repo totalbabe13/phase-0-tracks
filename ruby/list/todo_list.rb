@@ -25,7 +25,12 @@ class List
     	@todo.delete_at(0)
     	p @todo
     end	
+    #- - - - - - - - - - - - - - - - - - - - - 
 
+    def choose_item(task)
+    	@todo[0]
+    	p @todo[0]
+    end	
  end   
 
 #list_test = List.new 
