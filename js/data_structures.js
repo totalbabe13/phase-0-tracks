@@ -13,6 +13,11 @@ horses.push("Cheeta")
 horses.push("George")
 
 stables = {}
-stables[horses[0]] = color_of_horse
+//stables[horses[0]] = color_of_horse
+
+for (var i = 0; i < horses.length; i++) {
+  stables[horses[i]] = colors[i]
+	
+}
 
 console.log(stables)
