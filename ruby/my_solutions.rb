@@ -3,7 +3,12 @@
 # I worked on this challenge [by myself, with: ].
 # We spent [#] hours on this challenge.
 
-# EXPLANATION OF require_relative
+# EXPLANATION OF require_relative 
+
+# Required relative, sources data/code from another document, similar to the relationship that css has with HTML
+# You can work with a local source class, or data structure, Where as "require", scopes a sources the Ruby library at large
+#
+
 #
 #
 require_relative 'state_data'
@@ -15,6 +20,9 @@ class VirusPredictor
     @population = population
     @population_density = population_density
   end
+  
+  #this method i THINK functions as a getter method for the other two varialble to be able to function
+
 
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
@@ -22,6 +30,12 @@ class VirusPredictor
   end
 
   private
+  
+
+  # This method compares the population info from "state-data", makes a comparison,
+  # and performs a multiplication operation, where the relust is stored in a variable-->
+  # "Number of deaths" and the prints a string for the user using interpolation
+
 
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
@@ -40,6 +54,12 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
+
+
+  #This method takes 2 arguments as parameters, the name of the state and the population density.
+  #based on the population density data from "State_data" data structure, it creates ranges to multiply it,
+  #and stores the result in the "speed" variable given below, to be printed in a string via interpolation.
+
 
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
@@ -68,6 +88,13 @@ end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+
+ STATE_DATA.each do | state_name, population_info|
+  
+  new_state_instance = VirusPredictor.new(state_name,STATE_DATA[:population_density], STATE_DATA[:population])
+
+  new_state_instance.virus_effects
+
 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
