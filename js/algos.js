@@ -47,19 +47,39 @@ function phrase_finder(array){
 var phrase_array = ['complexities','flowering', 'help me', 'flexible', 'yikes' ]
 phrase_finder(phrase_array)
 
+
+console.log("")
+console.log("")
+console.log("")
 //==================================================================================
 //Release 1
-
+console.log("Matching Values in Objects")
 function key_pair_finder(object_1,object_2){
+//console.log(object_1.age)
+//console.log(object_2.age)
+   	match = false
+	if (object_1.age === object_2.age){
+    	match = true
+		console.log("Ages Match!")
+	}
+	
+	else if (object_1.name === object_2.name){
+		match = true
+		console.log("Names Match!")
+	} 	
 
-console.log(object_1.age)
+
 
 }
 
 var  person_1 = {name: "Steven", age: 54};
 var  person_2 = {name: "Tamir", age: 54}; 
 
-key_pair_finder(person_1,person_2)
+var  animal_1 = {animal: "Dog", legs: 4};
+var  animal_2 = {animal: "Dog", legs: 3};
+
+key_pair_finder(person_1, person_2)
+key_pair_finder(animal_1, animal_2)
 //==================================================================================
 //Release 2	
 
