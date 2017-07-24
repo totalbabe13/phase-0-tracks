@@ -1,21 +1,4 @@
-//write a function that takes an array of words or phrases 
-//and returns the longest word or phrase in the array. 
-
-//So if we gave your function the array of 
-//["long phrase","longest phrase","longer phrase"], 
-//it would return "longest phrase". 
-
-//This is a logical reasoning challenge,
-// so try to reason through this based on what you already know, 
-//rather than Googling the fanciest solution or 
-//looking up built-in sorting functions. 
-//Note that "some string".length will do what you expect in JS.
-//Add driver code that tests your function on a few arrays.
-
-
 //1.create an array with many different length strings
-
-var phrase_array = ['flowering', 'help me', 'flexible', 'yikes', 'complexities' ]
 
 //2.access each string in the array
 //2.a --> call 1 element length in driver code
@@ -34,12 +17,15 @@ var phrase_array = ['flowering', 'help me', 'flexible', 'yikes', 'complexities' 
  //4. compare lengths of each string 
 
  //5. larger loop to iterate through all of the word array
+   var phrase_array = ['complexities','flowering', 'help me', 'flexible', 'yikes' ]
+//last_word = (phrase_array.length -1)
+
     i = 0 // first value
     j = 1 // secound value
     k = 2 
  for (var l = 0; l < phrase_array.length; l++) {
- 	// mover
-// l = 0 // index counter
+ //for (var i = 0; i < phrase_array.length; i++) {
+//l is index counter
 	
 	if (phrase_array[i].length > phrase_array[j].length) {
 		var bigger = phrase_array[i]
@@ -48,7 +34,7 @@ var phrase_array = ['flowering', 'help me', 'flexible', 'yikes', 'complexities' 
 		i = i + 1;
 		j = j + 1; 
 		k = k + 1;
-		//console.log(bigger)
+		//console.log(phrase_array[i])
 	} 
 
 	else if ( phrase_array[i].length < phrase_array[j].length) {
@@ -62,22 +48,11 @@ var phrase_array = ['flowering', 'help me', 'flexible', 'yikes', 'complexities' 
 	}
     console.log("- - - - - - - - - ")
     console.log(i,j,k,l)
+    
 	console.log(phrase_array)
-}	
-
-
-
-	//remove switch [0] with [1] using first splice it back into array infront of [1]
-	// then use .shift() to remove the orignal copy so now [0] is smaller than [1]
-   
-
-
-
-
+	console.log(phrase_array[4])
+	
+ }
  
-
-//select the longest string
-
-// - - - - - - - - - - - - 
-
-//console.log(phrase_array)
+ console.log(phrase_array[4])
+	
