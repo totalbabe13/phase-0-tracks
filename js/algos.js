@@ -15,44 +15,57 @@
 // l = 0 // index counter
 
  //4. compare lengths of each string 
-
  //5. larger loop to iterate through all of the word array
-   var phrase_array = ['complexities','flowering', 'help me', 'flexible', 'yikes' ]
-//last_word = (phrase_array.length -1)
-
-    i = 0 // first value
-    j = 1 // secound value
-    k = 2 
+//==================================================================================
+//Release 0   
+function phrase_finder(array){
  for (var l = 0; l < phrase_array.length; l++) {
- //for (var i = 0; i < phrase_array.length; i++) {
-//l is index counter
-	
+	i = 0 // first value
+    j = 1 // secound value
+    k = 2
 	if (phrase_array[i].length > phrase_array[j].length) {
-		var bigger = phrase_array[i]
-		phrase_array.splice(k,0,bigger)
+		//var bigger = phrase_array[i]
+		phrase_array.splice(k,0,phrase_array[i])
 		phrase_array.shift()
-		i = i + 1;
-		j = j + 1; 
-		k = k + 1;
-		//console.log(phrase_array[i])
+		i = i++;
+		j = j++; 
+		k = k++;
 	} 
-
 	else if ( phrase_array[i].length < phrase_array[j].length) {
-
-		i = i + 1;
-		j = j + 1; 
-		k = k + 1;
-		//var larger = phrase_array[j]
-		//console.log(phrase_array[j])
-
+		i = i++;
+		j = j++; 
+		k = k++;
 	}
     console.log("- - - - - - - - - ")
     console.log(i,j,k,l)
-    
 	console.log(phrase_array)
-	console.log(phrase_array[4])
 	
  }
  
- console.log(phrase_array[4])
-	
+ return console.log(phrase_array[4])
+}
+var phrase_array = ['complexities','flowering', 'help me', 'flexible', 'yikes' ]
+phrase_finder(phrase_array)
+
+//==================================================================================
+//Release 1
+
+function key_pair_finder(object_1,object_2){
+
+console.log(object_1.age)
+
+}
+
+var  person_1 = {name: "Steven", age: 54};
+var  person_2 = {name: "Tamir", age: 54}; 
+
+key_pair_finder(person_1,person_2)
+//==================================================================================
+//Release 2	
+
+function word_inventor(word_num){
+
+}
+
+word_inventor(3)
+
