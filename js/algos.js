@@ -26,41 +26,58 @@ var phrase_array = ['flowering', 'help me', 'flexible', 'yikes', 'complexities' 
 //3.b use a counter to move through array indexes
 //3.c change index values using operators
  
- i = 0 // first value
- j = 1 // secound value
- k = 2
+ //i = 0 // first value
+ //j = 1 // secound value
+ //k = 2 // mover
+// l = 0 // index counter
 
- 
+ //4. compare lengths of each string 
 
+ //5. larger loop to iterate through all of the word array
+    i = 0 // first value
+    j = 1 // secound value
+    k = 2 
+ for (var l = 0; l < phrase_array.length; l++) {
+ 	// mover
+// l = 0 // index counter
+	
 	if (phrase_array[i].length > phrase_array[j].length) {
 		var bigger = phrase_array[i]
 		phrase_array.splice(k,0,bigger)
 		phrase_array.shift()
-		i = i++;
-		j = j++; 
-		k = k++;
+		i = i + 1;
+		j = j + 1; 
+		k = k + 1;
 		//console.log(bigger)
-	}   
+	} 
+
 	else if ( phrase_array[i].length < phrase_array[j].length) {
-		i = i++;
-		j = j++; 
-		k = k++;
-		var larger = phrase_array[j]
+
+		i = i + 1;
+		j = j + 1; 
+		k = k + 1;
+		//var larger = phrase_array[j]
 		//console.log(phrase_array[j])
 
 	}
+    console.log("- - - - - - - - - ")
+    console.log(i,j,k,l)
+	console.log(phrase_array)
+}	
+
+
+
 	//remove switch [0] with [1] using first splice it back into array infront of [1]
 	// then use .shift() to remove the orignal copy so now [0] is smaller than [1]
    
 
-//3.b if [0] > [1] => arr.splice(index, 0, item);
 
 
 
-//compare lengths of each tring 
+ 
 
 //select the longest string
 
 // - - - - - - - - - - - - 
 
-console.log(phrase_array)
+//console.log(phrase_array)
