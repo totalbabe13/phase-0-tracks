@@ -13,12 +13,54 @@
 //Add driver code that tests your function on a few arrays.
 
 
-//create an array with many different length strings
+//1.create an array with many different length strings
 
-//access each string in the array
+var phrase_array = ['flowering', 'help me', 'flexible', 'yikes', 'complexities' ]
 
-//count the length of each string
+//2.access each string in the array
+//2.a --> call 1 element length in driver code
+//2.b --> count the length of each string
+
+//3. COMPARE with if statement 
+//3.a try writting a bubble sort algorythm
+//3.b use a counter to move through array indexes
+//3.c change index values using operators
+ 
+ i = 0 // first value
+ j = 1 // secound value
+ k = 2
+
+ 
+
+	if (phrase_array[i].length > phrase_array[j].length) {
+		var bigger = phrase_array[i]
+		phrase_array.splice(k,0,bigger)
+		phrase_array.shift()
+		i = i++;
+		j = j++; 
+		k = k++;
+		//console.log(bigger)
+	}   
+	else if ( phrase_array[i].length < phrase_array[j].length) {
+		i = i++;
+		j = j++; 
+		k = k++;
+		var larger = phrase_array[j]
+		//console.log(phrase_array[j])
+
+	}
+	//remove switch [0] with [1] using first splice it back into array infront of [1]
+	// then use .shift() to remove the orignal copy so now [0] is smaller than [1]
+   
+
+//3.b if [0] > [1] => arr.splice(index, 0, item);
+
+
 
 //compare lengths of each tring 
 
-//select the longest string, 
+//select the longest string
+
+// - - - - - - - - - - - - 
+
+console.log(phrase_array)
