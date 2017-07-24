@@ -1,38 +1,21 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself ].
+# I worked on this challenge [by myself, with: ].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#--> allows access to class data from a separate file. Similar to css, in HTML, 
-#where, on document can use data and info from the other. require by itself, refrences all of 
-#the entire library of language in ruby, as oppose to just a specific relative document with specific
-#Class data
-
-#release 2 : state data is a HASH as a constant?? We can access the data from outside
-#of the scope of its class, but it is un-writeable 
-
-
-
+#
+#
 require_relative 'state_data'
 
 class VirusPredictor
-  
 
-#initalize allows for attritubes to function inside of class code
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-#def dry_report
-
-
-
-# formats class attributes to operate for two other methods inside class
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -40,9 +23,6 @@ class VirusPredictor
 
   private
 
-
-#returns a string with a calculation of the number of deaths in the state according to
-#the population density
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -61,10 +41,6 @@ class VirusPredictor
 
   end
 
-
-
-#returns the speed at which virus will spread in months, 
-#according to the population density
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -86,28 +62,12 @@ class VirusPredictor
 
   end
 
- 
-
 end
 
 #=======================================================================
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
-
-STATE_DATA.each do | state_name, population_info|
-    
-    state_instance = VirusPredictor.new(state_name, \
-   
-
-    STATE_DATA[state_name][:population_density], \
-   
-    STATE_DATA[state_name][:population])
-    state_instance.virus_effects
-end
-
-
-
 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
