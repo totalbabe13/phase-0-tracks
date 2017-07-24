@@ -12,9 +12,11 @@ function reverser(word){
 
  
  array_2 = array_1.reverse();
- 
 
- console.log(array_2)
+
+
+ console.log(array_2.join(''))
+ //console.log(array_2)
  //console.log(array_1)
  //console.log (word.split("",word.length))
 }
