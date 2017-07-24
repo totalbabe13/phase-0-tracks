@@ -1,13 +1,18 @@
 
 
 var colors = ["Blue", "brown" ,"white", "flourescent orange"];
+color_of_horse = colors[0]
 
+var horses = ["Ed", "Beauty", "Ghost", "Lady"];
 
-var horses = ["Ed", "Beauty", "Ghost Rider", "Lady Two-Chains"];
-
+new_horse = horses[0]
 colors.push("Glow in the Dark");
 colors.push("Chrome")
 
 horses.push("Cheeta")
-horses.push("George Washington")
+horses.push("George")
 
+stables = {}
+stables[horses[0]] = color_of_horse
+
+console.log(stables)
