@@ -17,6 +17,7 @@
 require_relative 'state_data'
 
 class VirusPredictor
+  
 
 #initalize allows for attritubes to function inside of class code
   def initialize(state_of_origin, population_density, population)
@@ -25,6 +26,12 @@ class VirusPredictor
     @population_density = population_density
   end
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+#def dry_report
+
+
+
 # formats class attributes to operate for two other methods inside class
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
@@ -32,7 +39,6 @@ class VirusPredictor
   end
 
   private
-
 
 
 #returns a string with a calculation of the number of deaths in the state according to
@@ -80,12 +86,28 @@ class VirusPredictor
 
   end
 
+ 
+
 end
 
 #=======================================================================
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+
+STATE_DATA.each do | state_name, population_info|
+    
+    state_instance = VirusPredictor.new(state_name, \
+   
+
+    STATE_DATA[state_name][:population_density], \
+   
+    STATE_DATA[state_name][:population])
+    state_instance.virus_effects
+end
+
+
+
 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
