@@ -9,6 +9,10 @@
 #the entire library of language in ruby, as oppose to just a specific relative document with specific
 #Class data
 
+#release 2 : state data is a HASH as a constant?? We can access the data from outside
+#of the scope of its class, but it is un-writeable 
+
+
 
 require_relative 'state_data'
 
