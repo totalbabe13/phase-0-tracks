@@ -18,12 +18,14 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+#initalize allows for attritubes to function inside of class code
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+# formats class attributes to operate for two other methods inside class
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -31,6 +33,10 @@ class VirusPredictor
 
   private
 
+
+
+#returns a string with a calculation of the number of deaths in the state according to
+#the population density
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -49,6 +55,10 @@ class VirusPredictor
 
   end
 
+
+
+#returns the speed at which virus will spread in months, 
+#according to the population density
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
