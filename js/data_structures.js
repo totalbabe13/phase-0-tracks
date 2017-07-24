@@ -42,9 +42,50 @@ function Car(make, model, year, used) {
 }
 
 console.log("Let's build a car ...");
-// Here is where we call that constructor function
-// that we just made ...
+
 var anothercar = new Car("Honda","Accord", 1999, true);
+console.log(anothercar);
+console.log("Our car can run:");
+anothercar.runs();
+console.log("----");
+
+function Car(make, model, year, used) {
+	
+	console.log("Our new car:", this);
+	this.model = model;
+	this.make = make;
+	this.year = year;
+	this.used = used;
+
+	this.runs = function() { console.log("Vrooom!"); };
+	
+	console.log("Car INITIALIZATION COMPLETE");
+}
+
+console.log("Let's build a car ...");
+
+var anothercar = new Car("Mazda","Miata", 2017, false);
+console.log(anothercar);
+console.log("Our car can run:");
+anothercar.runs();
+console.log("----");
+
+function Car(make, model, year, used) {
+	
+	console.log("Our new car:", this);
+	this.model = model;
+	this.make = make;
+	this.year = year;
+	this.used = used;
+
+	this.runs = function() { console.log("Vrooom!"); };
+	
+	console.log("Car INITIALIZATION COMPLETE");
+}
+
+console.log("Let's build a car ...");
+
+var anothercar = new Car("Mitsubishi","Eclipse", 2001, true);
 console.log(anothercar);
 console.log("Our car can run:");
 anothercar.runs();
