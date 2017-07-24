@@ -15,15 +15,19 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+   # this method enables the instance variables/attributes to operate inside the class obect and help us define
+   #what state this class has.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
   
-  #this method i THINK functions as a getter method for the other two varialble to be able to function
+  
 
 
+  #this method calls the other two methods at the same time. it consolidates the other two methods,
+  #allowing the us to short hand the other two into one tidy method.
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -35,8 +39,6 @@ class VirusPredictor
   # This method compares the population info from "state-data", makes a comparison,
   # and performs a multiplication operation, where the relust is stored in a variable-->
   # "Number of deaths" and the prints a string for the user using interpolation
-
-
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -59,8 +61,6 @@ class VirusPredictor
   #This method takes 2 arguments as parameters, the name of the state and the population density.
   #based on the population density data from "State_data" data structure, it creates ranges to multiply it,
   #and stores the result in the "speed" variable given below, to be printed in a string via interpolation.
-
-
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -89,11 +89,13 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
- STATE_DATA.each do | state_name, population_info|
+ STATE_DATA.each do | state_name, population_info |
   
-  new_state_instance = VirusPredictor.new(state_name,STATE_DATA[:population_density], STATE_DATA[:population])
-
+  new_state_instance = VirusPredictor.new(state_name, STATE_DATA[state_name][:population_density], STATE_DATA[state_name][:population])
+ 
   new_state_instance.virus_effects
+
+end
 
 
 
