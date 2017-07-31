@@ -67,9 +67,6 @@ spacer
 
 #  = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-#3. A different method that filters a data structure for only items 
-#   satisfying a certain condition -- Ruby offers several options!
-
 #4. A method that will remove items from a data structure until the 
 #   condition in the block evaluates to false, then stops (you may 
 #   not find a perfectly working option for the hash, and that's okay).
@@ -91,6 +88,13 @@ array_ray_ray = [0,0,0,1,0,9,10,88,7,6,66,4,2,3,5]
 array_ray_ray.keep_if  { |number| number < 5 }
 p array_ray_ray
 
+#  = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+spacer
+mixed_bag = [7,'chap stick',11,'sunglasses',420,'cell phone',69,'wallet',666,'keys']
+#3. A different method that filters a data structure for only items 
+#   satisfying a certain condition -- Ruby offers several options!
+mixed_bag.select { |item| p item if item.class == String }
 
 
 
