@@ -21,10 +21,9 @@ puts "the usual".concat " suspects"
 #=> "the usual suspects"
 
 puts " suspects".prepend "the usual"
-
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+puts "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"r
 
 # "The mystery of the missing first letter".<???>
