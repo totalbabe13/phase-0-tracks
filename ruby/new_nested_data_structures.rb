@@ -8,13 +8,38 @@ highway666 = {
 
 	mazda:['Sally','Greg','Bob','Alma'],
 	
-	toyota:['Jade', 'Lauren','JP']
+	toyota:['Jade', 'Lauren','JP'],
 	
-	honda: ['Emily','Dana',"Cory"]
+	honda: ['Emily','Dana',"Cory"],
 	
-	chevy:['John','Marina','Tony','Rachel','Sofia']
+	chevy:['John','Marina','Tony','Rachel','Sofia'],
 	
 	ford: ['Ron','Chelsea','Mike','Hope','Ben']
 }
 
-p highway666[mazda:][3]
+# find Alma
+p highway666[:mazda][3]
+puts
+
+# Find Ron and Chelsea
+p highway666[:ford][0..1]
+puts
+
+# Find Emily
+p highway666[:honda][0]
+puts
+
+# Find Sofia
+p highway666[:chevy][4]
+puts
+
+highway666[:chevy].each {|person| p person if person == "Rachel" }
+puts
+
+p highway666[:toyota].select { |person| person == 'JP' } 
+puts
+
+p highway666[:toyota].reject {|person| person == 'JP'}
+puts
+
+
