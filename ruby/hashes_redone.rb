@@ -40,20 +40,28 @@ client_info = {}
 #the client's name, age, number of children, decor theme, 
 
 #gets name
-"Please enter you full name:"
+puts "Please enter you full name:"
 client_info[:client_name] = gets.chomp
 
 #gets age
+puts "Please enter you current age:"
+client_info[:client_age] = gets.chomp
 
 #gets number of children
+puts "Please enter how many children you have, if any:"
+client_info[:client_children] = gets.chomp
 
 #gets decore theme
+puts "Please enter you prefered decore theme:"
+client_info[:client_theme] = gets.chomp
 
 #number of pets
+puts "Please enter the number of pets you hav if any:"
+client_info[:client_pets] = gets.chomp
 
 
 
-
+p client_info
 
 
 
