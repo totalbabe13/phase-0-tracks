@@ -2,7 +2,7 @@ puts
 puts 
 puts 'WELCOME SECRET AGENT'
 puts 'YOU have been selected for a top secret mission to find CARMEN SANDIEGO!'
-puts 'First things first, we need you to enter your first and last name into our ALIAS generator:'
+puts 'First things first, we need you to enter your first and then last name into our ALIAS generator:'
 
 
 def agent_name
@@ -11,7 +11,7 @@ def agent_name
   while final_alias.length !=  2 
   # *side note only accepts two names
   
-  puts 'enter names:'
+  puts 'enter a name:'
   agent = gets.chomp 
   
   not_vowels  = ['b','c','f','g','j','k','l','m','p','q','r','s','v','w','x','y']
