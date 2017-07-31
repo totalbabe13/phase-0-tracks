@@ -83,11 +83,16 @@ puts "The number of pets your home has : #{client_info[:client_pets]}"
 #info review/ edit 
 puts "= "*35
 
-puts 'Would you like to edit or change any of your answers?'
+puts 'Any other changes? enter CATAGORY or type in DONE'
 puts 'If so, select the CATAGORY corresponding to your answer, and re-enter your response.'
-puts 'Or, simply type DONE, to confirm your application.'
+puts 'when you have finished simply type DONE, to confirm your application.'
 puts
-puts "CATAGORIES: --> client_name, client_age, client_children, client_theme, client_pets "
+puts "CATAGORIES:  --> client_name, client_age, client_children, client_theme, client_pets "
+
+response_edit = ''
+changes_question = 'Any other changes? enter CATAGORY or type in DONE'
+
+while response_edit != 'DONE'
 
 response_edit = gets.chomp
        #user input your_name'--> user accesses key
@@ -95,34 +100,44 @@ response_edit = gets.chomp
          find_key = response_edit.to_sym
          puts 'Re-eneter you name:'
          client_info[find_key] = gets.chomp
+         puts changes_question
+         puts ''
          #test - puts client_assesment[find_key]
          
       elsif response_edit == 'client_age'
          find_key = response_edit.to_sym
          puts 'Re-eneter you age:'
          client_info[find_key] = gets.chomp
+         puts changes_question
+         puts ''
          #test - puts client_assesment[find_key]
          
       elsif response_edit == 'client_children'
          find_key = response_edit.to_sym
          puts 'Re-eneter the number of children you have:'
          client_info[find_key] = gets.chomp
+         puts changes_question
+         puts ''
          #test - puts client_assesment[find_key]
       
       elsif response_edit == 'client_theme'
          find_key = response_edit.to_sym
          puts 'Re-eneter your decor theme:'
          client_info[find_key] = gets.chomp
+         puts changes_question
+         puts ''
          #test - puts client_assesment[find_key]   
       
       elsif response_edit == 'client_pets'
          find_key = response_edit.to_sym
          puts 'Re-eneter how many pets you have:'
          client_info[find_key] = gets.chomp
+         puts changes_question
+         puts ''
          #test - puts client_assesment[find_key]
       
-      elsif response_edit == 'DONE'
       end
+    end  
 
 
 
