@@ -94,13 +94,17 @@ changes_question = 'Any other changes? enter CATAGORY or type in DONE'
 
 while response_edit != 'DONE'
 
-response_edit = gets.chomp
+response_edit = gets.chomp #retrieve key
        #user input your_name'--> user accesses key
-       if response_edit == 'client_name'
-         find_key = response_edit.to_sym
+       if response_edit == 'client_name' 
+       #if user inputs key name, they can change the key value 
+         find_key = response_edit.to_sym 
+         #assign key to variable
          puts 'Re-eneter you name:'
-         client_info[find_key] = gets.chomp
-         puts changes_question
+         client_info[find_key] = gets.chomp 
+         #with replace key value with response
+         puts changes_question 
+         #ask about any other changes
          puts ''
          #test - puts client_assesment[find_key]
          
@@ -138,7 +142,26 @@ response_edit = gets.chomp
       
       end
     end  
+# - - - - - -  - - - - - -  - - - - - -  - - - - - -       
+#UPDATES/CORRECTIONS - reviewing information -printing out hash 
 
+puts ' The final information you submitted is below:'
+puts
+puts
+puts "Your full name is : #{client_info[:client_name]}"
+puts
+puts "Your current age is : #{client_info[:client_age]}"
+puts
+puts "You have this many children: #{client_info[:client_children]} " 
+puts
+puts "Your decor theme choice is : #{client_info[:client_theme]}"
+puts
+puts "The number of pets your home has : #{client_info[:client_pets]}"
+
+# - - - - - -  - - - - - -  - - - - - -  - - - - - - 
+
+puts
+puts "THANK YOU! We will review your submission and get back to you ASAP"
 
 
 
