@@ -20,11 +20,12 @@ puts "Stop! You’re under arrest!".upcase
 puts "the usual".concat " suspects"
 #=> "the usual suspects"
 
-# " suspects".<???>
+puts " suspects".prepend "the usual"
+
 # => "the usual suspects"
 
 # "The case of the disappearing last letter".<???>
-# => "The case of the disappearing last lette"
+# => "The case of the disappearing last lette"r
 
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"
