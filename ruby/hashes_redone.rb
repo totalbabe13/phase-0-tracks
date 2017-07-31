@@ -59,6 +59,16 @@ client_info[:client_theme] = gets.chomp
 puts "Please enter the number of pets you hav if any:"
 client_info[:client_pets] = gets.chomp.to_i
 
+#wallpaper prefrence
+puts "tell your wall paper preferences(write in any that apply, 
+press enter, and if your finished type DONE):"
+client_info[:client_wallpaper] = []
+wallpaper = ''
+while wallpaper != 'DONE'
+	wallpaper = gets.chomp
+	client_info[:client_wallpaper].push wallpaper
+end
+
 
 puts "= "*35
 #p client_info #driver code
@@ -78,6 +88,8 @@ puts
 puts "Your decor theme choice is : #{client_info[:client_theme]}"
 puts
 puts "The number of pets your home has : #{client_info[:client_pets]}"
+puts 
+puts "Your wall paper choices are as listed : #{client_info[:client_wallpaper]}"
 
 # - - - - - -  - - - - - -  - - - - - -  - - - - - - 
 #info review/ edit 
@@ -87,7 +99,7 @@ puts 'Any other changes? enter CATAGORY or type in DONE'
 puts 'If so, select the CATAGORY corresponding to your answer, and re-enter your response.'
 puts 'when you have finished simply type DONE, to confirm your application.'
 puts
-puts "CATAGORIES:  --> client_name, client_age, client_children, client_theme, client_pets "
+puts "CATAGORIES:  --> client_name, client_age, client_children, client_theme, client_pets, client_wallpaper "
 
 response_edit = ''
 changes_question = 'Any other changes? enter CATAGORY or type in DONE'
@@ -139,6 +151,14 @@ response_edit = gets.chomp #retrieve key
          puts changes_question
          puts ''
          #test - puts client_assesment[find_key]
+
+      elsif response_edit == 'client_wallpaper'
+         find_key = response_edit.to_sym
+         puts 'Re-eneter your wallpaper choices:'
+         client_info[find_key] = gets.chomp
+         puts changes_question
+         puts ''
+         #test - puts client_assesment[find_key]   
       
       end
     end  
@@ -157,6 +177,8 @@ puts
 puts "Your decor theme choice is : #{client_info[:client_theme]}"
 puts
 puts "The number of pets your home has : #{client_info[:client_pets]}"
+puts 
+puts "Your wall paper choices are as listed : #{client_info[:client_wallpaper]}"
 
 # - - - - - -  - - - - - -  - - - - - -  - - - - - - 
 
