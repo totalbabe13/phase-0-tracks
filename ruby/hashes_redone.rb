@@ -67,6 +67,7 @@ puts "= "*35
 #UPDATES/CORRECTIONS - reviewing information -printing out hash 
 
 puts 'Please, look over the information you submitted and make any corrections if necessary:'
+puts "= "*35
 puts
 puts
 puts "Your full name is : #{client_info[:client_name]}"
@@ -78,6 +79,18 @@ puts
 puts "Your decor theme choice is : #{client_info[:client_theme]}"
 puts
 puts "The number of pets your home has : #{client_info[:client_pets]}"
+
+# - - - - - -  - - - - - -  - - - - - -  - - - - - - 
+#info review/ edit 
+puts "= "*35
+
+
+#'Would you like to edit any of the information you have submitted?'
+
+# Key selection by client to manually change the value of that key
+
+# or type in DONE if they are satisfeid with the info
+
 
 
 
