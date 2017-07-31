@@ -29,7 +29,7 @@ puts "The case of the disappearing last letter".chop
 puts "The mystery of the missing first letter".delete "T"
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+puts "Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
 
 # "z".<???>
