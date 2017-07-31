@@ -56,21 +56,32 @@ i += 1
  #release 2  - - - - - - - - - - - - - - - - - - - - - - - - - 
   
  def bubble_sort
-  arr = [8,6,5,1,3,0,9] #array length = 7 
-  temp = 0
+  arr = [8,6,11,5,1] 
+ 
 
-  arr.each do |number| #iterator 
-    i = 0 #index value 0 
-    x = 1 #index value 1
-   
-   
-  while (x < arr.length) # when x reaches array length, loop is over
-      
+  arr.map do |item| 
+    i = 0 
+    x = 1 
+    
+
+  while (x < arr.length) 
+  
+        puts i
+        puts '- - - - '
+        puts x
+        puts
+       
+        # - - - - - -  
       if arr[i] > arr[x] #index value 0 >index value 1
-        temp = arr[i]    # SWAP values using temp variable place holder
-        arr[i] = arr[x]  
-        arr[x] = temp    #now 6 is where 8 used to be
+        temp   =  arr[i]  # SWAP values using temp variable place holder
+        arr[i] =  arr[x]  
+        arr[x] =  temp    #now 6 is where 8 used to be
+        
+        # - - - - - -
+        
         p arr
+        puts "i = #{arr[i]} and x = #{arr[x]} and temp = #{temp}"
+        puts
         #puts 
         #puts ' - - - - - - - - - - '
       
@@ -83,8 +94,23 @@ i += 1
   end #end while 
     
   end  #end Each  
- arr
+ p arr
 end  #end def 
 bubble_sort
+   
   
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
