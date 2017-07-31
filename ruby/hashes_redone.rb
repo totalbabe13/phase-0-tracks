@@ -28,7 +28,7 @@ puts "Welcome to Iris Interiors INC. We will see to it that what you see is what
 puts
 puts "Please, complete the following questionaire as accurately as possible, to help us, HELP YOU."
 puts
-puts "Press ENTER to continue:"
+puts "= "*35
 
 
 client_info = {}
@@ -45,11 +45,11 @@ client_info[:client_name] = gets.chomp
 
 #gets age
 puts "Please enter you current age:"
-client_info[:client_age] = gets.chomp
+client_info[:client_age] = gets.chomp.to_i
 
 #gets number of children
 puts "Please enter how many children you have, if any:"
-client_info[:client_children] = gets.chomp
+client_info[:client_children] = gets.chomp.to_i
 
 #gets decore theme
 puts "Please enter you prefered decore theme:"
@@ -57,11 +57,29 @@ client_info[:client_theme] = gets.chomp
 
 #number of pets
 puts "Please enter the number of pets you hav if any:"
-client_info[:client_pets] = gets.chomp
+client_info[:client_pets] = gets.chomp.to_i
 
 
+puts "= "*35
+#p client_info #driver code
 
-p client_info
+# - - - - - -  - - - - - -  - - - - - -  - - - - - - 
+#UPDATES/CORRECTIONS - reviewing information -printing out hash 
+
+puts 'Please, look over the information you submitted and make any corrections if necessary:'
+puts
+puts
+puts "Your full name is : #{client_info[:client_name]}"
+puts
+puts "Your current age is : #{client_info[:client_age]}"
+puts
+puts "You have this many children: #{client_info[:client_children]} " 
+puts
+puts "Your decor theme choice is : #{client_info[:client_theme]}"
+puts
+puts "The number of pets your home has : #{client_info[:client_pets]}"
+
+
 
 
 
