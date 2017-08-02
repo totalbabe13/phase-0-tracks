@@ -32,7 +32,12 @@ p word_1.split(//)
 # - - - - - - - - - - - - - - - - - - - - - - - -
 #make guessing interface: create  "_ _ _ c _ _ _"
  #iterate over string characters
-word_1.each_char {|letter| print letter, ' ' }
+# DID NOT WORK -->word_1.each_char {|letter| print letter, ' ' }
+
+array_2 = array_1.map {|x| x = "_ " }
+p array_2.join
+
+
 
 
 
