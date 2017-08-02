@@ -25,9 +25,14 @@ def initialize
 end
 
 word_1 = "clovers"
-p word_1.split(//) #separate letters from given word
-
-
+p word_1.split(//)
+#p " _ _ _ _ _ _ _".length
+#p word_1.length
+ 
+# - - - - - - - - - - - - - - - - - - - - - - - -
+#make guessing interface: create  "_ _ _ c _ _ _"
+ #iterate over string characters
+word_1.each_char {|letter| print letter, ' ' }
 
 
 
