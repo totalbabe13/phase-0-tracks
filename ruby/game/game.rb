@@ -22,10 +22,10 @@ attr_accessor
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 def initialize
-
 end
 
-
+word_1 = "clovers"
+p word_1.split(//) #separate letters from given word
 
 
 
@@ -45,5 +45,5 @@ end	#end of class
 puts "welome"
 puts "submitt your word player one:"
 
-player1_word = gets.chompS
+#player1_word = gets.chompS
 
