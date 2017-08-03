@@ -16,29 +16,72 @@
 
 class Game
 
-attr_reader
-attr_accessor
+attr_reader :guesses_bin
+attr_accessor :given_word, :masked_word, :letter_guess
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 def initialize
+	@given_word #word from player 1, to be guessed
+	@masked_word # array with blanks ==> ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
+	@letter_guess #player 2's guess per turn 
+	@guesses_bin = [] #hold player 2's guesses
 end
 
-word_1 = "clovers"
-p word_1.split(//)
-#p " _ _ _ _ _ _ _".length
-#p word_1.length
- 
 # - - - - - - - - - - - - - - - - - - - - - - - -
 #make guessing interface: create  "_ _ _ c _ _ _"
- #iterate over string characters
-# DID NOT WORK -->word_1.each_char {|letter| print letter, ' ' }
+def spacer
+	puts "|" 
+	puts "|"
+	puts "|" 
+	puts "|"	
+	puts "|" 
+	puts "|"
+	puts "|" 
+	puts "|"
+	puts "|" 
+	puts "v"
+	puts 
+	puts
+end 	
+# - - - - - - - - - - - - - - - - - - - - - - - - -
+def masking_word
+	array_1 = @given_word.split(//)
+ 	@masked_word =array_1.map {|x| x = "_ " }
+ 	@given_word = @given_word.split(//)
+ 	#p @masked_word.join --> prints out "_ _ _ _ _ _ _ "
+end
+# - - - - - - - - - - - - - - - - - - - - - - - - -
+def print_masked_word
+ 	p @masked_word.join
+end 
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-array_2 = array_1.map {|x| x = "_ " }
-p array_2.join
 
 
+def guessing_feedback
+   
+    #@guesses_bin.push(letter_guess) # putting letter guess into front of array
+    guess_attempt =given_word.include?(letter_guess)   #=> true
+    	if guess_attempt == true
+    		 
+    		 # how to know the index/ placement of letter in string???
 
+
+    		 puts 'voila!'
+    	else puts 'nope!'	
+    	end	
+    puts
+    puts
+    
+
+    #p @guesses_bin #=> []
+    #p @masked_word #=> ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
+    #p @given_word  #=>  ["c", "l", "o", "v", "e", "r", "s"]
+     
+   
+end#end of guessing_feedback
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
 
@@ -51,9 +94,34 @@ end	#end of class
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 #driver code
 
-#new_game = Game.new 
-puts "welome"
-puts "submitt your word player one:"
+new_game = Game.new 
+puts "welome to the GAME"
+puts "submitt your word PLAYER 1:"
 
-#player1_word = gets.chompS
+new_game.given_word = gets.chomp! #gets word from PLAYER 1
+new_game.masking_word             # 
 
+new_game.spacer
+
+
+puts
+puts "PLAYER 2:"
+puts "Guess what letter might be in this word "
+puts
+
+
+new_game.letter_guess = gets.chomp
+new_game.guessing_feedback
+
+
+
+
+
+#- - - - - - - - - - - - - - - - - - - - - - - - -
+#p new_game.letter_guesses
+#p new_game.guesses_bin
+#new_game.print_masked_word #DRIVER checking if it is printing out 
+#new_game.spacer #temp
+#new_game.guessing_feedback #printing out  - - - - -
+#p new_game.masked_word.length
+#p new_game.given_word.length
