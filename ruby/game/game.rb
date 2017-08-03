@@ -16,7 +16,7 @@
 
 class Game
 
-attr_reader :guesses_bin
+attr_reader :guesses_bin, :limit_of_guesses
 attr_accessor :given_word, :masked_word, :letter_guess
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -26,7 +26,9 @@ def initialize
 	@masked_word # array with blanks ==> ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
 	@letter_guess #player 2's guess per turn 
 	@guesses_bin = [] #hold player 2's guesses
+	@limit_of_guesses
 end
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
 #make guessing interface: create  "_ _ _ c _ _ _"
@@ -56,33 +58,34 @@ def print_masked_word
  	p @masked_word.join
 end 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-
+def number_of_guesses
+	limit_of_guesses = @given_word.length * 2
+	puts "#{limit_of_guesses}"
+	#p limit_of_guesses
+end
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 def guessing_feedback
     
-    #@guesses_bin.push(letter_guess) # putting letter guess into front of array
+    @guesses_bin.push(letter_guess) # putting letter guess into front of array
     guess_attempt =given_word.include?(letter_guess)   #=> true
     	if guess_attempt == true
     		letter_place =  @given_word.index(letter_guess) 
      		letter_guess << " " 
     		@masked_word.insert(letter_place, letter_guess) 
     		@masked_word.delete_at(letter_place + 1)
+    		 puts 'VOILA! You guessed a correct letter'
+    		 print_masked_word
 
-
-    		 #p letter_place
-    		 # how to know the index/ placement of letter in string???
-             # "hello".index('e') #=> 1 FOR STRINGS
-
-    		 puts 'voila! you guessed a correct letter'
-    	else puts 'nope!'	
-    	end	
+    	else puts "the letter #{letter_guess} is not in this word"
+    	     print_masked_word
+    	end     
     puts
     puts
     
     #p letter_guess
-    #p @guesses_bin #=>  []
-    puts @masked_word.join #=>  ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
+    puts @guesses_bin #=>  []
+    #puts @masked_word.join #=>  ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
     #p @given_word  #=>  ["c", "l", "o", "v", "e", "r", "s"]
      
    
@@ -119,8 +122,8 @@ puts
 new_game.letter_guess = gets.chomp
 new_game.guessing_feedback
 
-
-
+puts '--- trying to print limit of guesses ---'
+new_game.number_of_guesses 
 
 
 #- - - - - - - - - - - - - - - - - - - - - - - - -
