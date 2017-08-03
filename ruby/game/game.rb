@@ -16,7 +16,7 @@
 
 class Game
 
-attr_reader :guesses_bin, :limit_of_guesses
+attr_reader :guesses_bin, :limit_of_guesses, :guesses_left
 attr_accessor :given_word, :masked_word, :letter_guess
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -27,6 +27,7 @@ def initialize
 	@letter_guess #player 2's guess per turn 
 	@guesses_bin = [] #hold player 2's guesses
 	@limit_of_guesses
+	@guesses_left = 0
 end
 
 
@@ -59,74 +60,90 @@ def print_masked_word
 end 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 def number_of_guesses
-	limit_of_guesses = @given_word.length * 2
-	puts "#{limit_of_guesses}"
-	#p limit_of_guesses
+	@limit_of_guesses = @given_word.length * 2
+	
 end
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
+def guesses_count
+   #number_of_guesses = number_of_guesses + 1
+end
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 def guessing_feedback
     
+    
+    
     @guesses_bin.push(letter_guess) # putting letter guess into front of array
-    guess_attempt =given_word.include?(letter_guess)   #=> true
+    
+    guess_attempt = @given_word.include?(letter_guess)   #=> true
     	if guess_attempt == true
     		letter_place =  @given_word.index(letter_guess) 
      		letter_guess << " " 
     		@masked_word.insert(letter_place, letter_guess) 
     		@masked_word.delete_at(letter_place + 1)
+    		
     		 puts 'VOILA! You guessed a correct letter'
     		 print_masked_word
 
+
     	else puts "the letter #{letter_guess} is not in this word"
     	     print_masked_word
-    	end     
+    	end 
+        puts
+        puts
+    	puts "the letters you have guessed are: ------> #{guesses_bin.join}"  
+        #@guesses_left = number_of_guesses - 1
+         #guesses_count
     puts
-    puts
-    
+    #p guesses_left 
     #p letter_guess
-    puts @guesses_bin #=>  []
+    #puts @guesses_bin #=>  []
     #puts @masked_word.join #=>  ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
     #p @given_word  #=>  ["c", "l", "o", "v", "e", "r", "s"]
      
    
 end#end of guessing_feedback
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-
-
-
-
-
-
+# - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 end	#end of class
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
 #driver code
 
 new_game = Game.new 
+
+
 puts "welome to the GAME"
 puts "submitt your word PLAYER 1:"
 
 new_game.given_word = gets.chomp! #gets word from PLAYER 1
-new_game.masking_word             # 
-
+new_game.masking_word             #coverts word into blanks            
 new_game.spacer
 
 
+
+while new_game.guesses_left != new_game.number_of_guesses
 puts
 puts "PLAYER 2:"
 puts "Guess what letter might be in this word "
 puts
 
 
+	
+
 new_game.letter_guess = gets.chomp
 new_game.guessing_feedback
 
-puts '--- trying to print limit of guesses ---'
-new_game.number_of_guesses 
+# adjust number of guesses left
+end
 
 
 #- - - - - - - - - - - - - - - - - - - - - - - - -
+#new_game.number_of_guesses 
 #p new_game.letter_guesses
 #p new_game.guesses_bin
 #new_game.print_masked_word #DRIVER checking if it is printing out 
