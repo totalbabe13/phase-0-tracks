@@ -60,23 +60,29 @@ end
 
 
 def guessing_feedback
-   
+    
     #@guesses_bin.push(letter_guess) # putting letter guess into front of array
     guess_attempt =given_word.include?(letter_guess)   #=> true
     	if guess_attempt == true
-    		 
+    		letter_place =  @given_word.index(letter_guess) 
+     		letter_guess << " " 
+    		@masked_word.insert(letter_place, letter_guess) 
+    		@masked_word.delete_at(letter_place + 1)
+
+
+    		 #p letter_place
     		 # how to know the index/ placement of letter in string???
+             # "hello".index('e') #=> 1 FOR STRINGS
 
-
-    		 puts 'voila!'
+    		 puts 'voila! you guessed a correct letter'
     	else puts 'nope!'	
     	end	
     puts
     puts
     
-
-    #p @guesses_bin #=> []
-    #p @masked_word #=> ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
+    #p letter_guess
+    #p @guesses_bin #=>  []
+    puts @masked_word.join #=>  ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
     #p @given_word  #=>  ["c", "l", "o", "v", "e", "r", "s"]
      
    
