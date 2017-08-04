@@ -17,17 +17,17 @@
 class Game
 
 attr_reader :guesses_bin, :limit_of_guesses, :guesses_left
-attr_accessor :given_word, :masked_word, :letter_guess
+attr_accessor :given_word, :masked_word, :letter_guess  
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 def initialize
-	@given_word #word from player 1, to be guessed
-	@masked_word # array with blanks ==> ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
-	@letter_guess #player 2's guess per turn 
-	@guesses_bin = [] #hold player 2's guesses
-	@limit_of_guesses
-	@guesses_left = 0
+	@given_word        # word from player 1, to be guessed
+	@masked_word       # array with blanks ==> ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
+	@letter_guess      # player 2's guess per turn 
+	@guesses_bin = []  # hold player 2's guesses
+	@limit_of_guesses  # ? 
+	@guesses_left = 0  # increment by 1 every
 end
 
 
@@ -65,17 +65,14 @@ def number_of_guesses
 end
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 def guesses_count
-   #number_of_guesses = number_of_guesses + 1
+     
 end
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 def guessing_feedback
     
-    
-    
     @guesses_bin.push(letter_guess) # putting letter guess into front of array
-    
     guess_attempt = @given_word.include?(letter_guess)   #=> true
     	if guess_attempt == true
     		letter_place =  @given_word.index(letter_guess) 
@@ -93,9 +90,9 @@ def guessing_feedback
         puts
         puts
     	puts "the letters you have guessed are: ------> #{guesses_bin.join}"  
-        #@guesses_left = number_of_guesses - 1
-         #guesses_count
-    puts
+        
+    @guesses_left = guesses_left + 1
+    p @guesses_left 
     #p guesses_left 
     #p letter_guess
     #puts @guesses_bin #=>  []
@@ -120,21 +117,36 @@ new_game = Game.new
 puts "welome to the GAME"
 puts "submitt your word PLAYER 1:"
 
+
 new_game.given_word = gets.chomp! #gets word from PLAYER 1
 new_game.masking_word             #coverts word into blanks            
 new_game.spacer
 
 
 
-while new_game.guesses_left != new_game.number_of_guesses
+
+
+#var = 0  #
+
+#until var == 10
+
+#p var 
+
+#var = var + 1
+
+#end
+
+
+      #while new_game.guesses_left != new_game.number_of_guesses
+	  #p new_game.guesses_left
+
+
+until new_game.guesses_left == new_game.number_of_guesses
+
 puts
 puts "PLAYER 2:"
 puts "Guess what letter might be in this word "
 puts
-
-
-	
-
 new_game.letter_guess = gets.chomp
 new_game.guessing_feedback
 
