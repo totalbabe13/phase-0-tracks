@@ -16,7 +16,7 @@
 
 class Game
 
-attr_reader :guesses_bin, :limit_of_guesses, :guesses_left
+attr_reader :guesses_bin, :limit_of_guesses, :guesses_left, :finished
 attr_accessor :given_word, :masked_word, :letter_guess  
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -28,24 +28,42 @@ def initialize
 	@guesses_bin = []  # hold player 2's guesses
 	@limit_of_guesses  # ? 
 	@guesses_left = 0  # increment by 1 every
+	@won_game  = false
+	@lost_game = false
+	@finished  = false
 end
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - -
 #make guessing interface: create  "_ _ _ c _ _ _"
 def spacer
-	puts "|" 
-	puts "|"
-	puts "|" 
-	puts "|"	
-	puts "|" 
-	puts "|"
-	puts "|" 
-	puts "|"
-	puts "|" 
-	puts "v"
-	puts 
-	puts
+	puts ""
+	puts ""
+	puts ""
+	puts ""
+	puts ""
+	puts ""
+	puts ""
+	puts ""
+	puts "N"
+	puts "O" 
+	puts " "
+	puts "P" 
+	puts "E"	
+	puts "E" 
+	puts "K"
+	puts "K" 
+	puts "I"
+	puts "N" 
+	puts "G"
+	puts ""
+	puts ""
+	puts ""
+	puts ""
+	puts ""
+	puts "!"
+	puts "!"
+	puts "!"
 end 	
 # - - - - - - - - - - - - - - - - - - - - - - - - -
 def masking_word
@@ -72,44 +90,75 @@ end
 
 def guessing_feedback
     
-    @guesses_bin.push(letter_guess) # putting letter guess into front of array
+    #@guesses_bin.push(letter_guess) # putting letter guess into front of array
     guess_attempt = @given_word.include?(letter_guess)   #=> true
+    	
+    	p 'testing variables:'
+    	p ''
+    	p ' - - - - - - - - - - - '
+    		 p "#{masked_word.join.delete(' ')}        : masked_word.join.delete"
+    		 p "#{given_word.join}        : given.word.join"
+    		 p "#{guesses_left}       : guesses_left"
+    		 p "#{limit_of_guesses}       : limit_of_guesses"
+    		 p "#{@won_game}       : won_game"
+    		 p "#{@lost_game}       : lost_game"
+    		 p "#{@finished}       : finished"
+    		 p "#{number_of_guesses}       : number_of_guesses"
+    		 p "#{letter_guess}       : letter_guess"
+    		 p    @guesses_bin      #: guesses_bin"
+    		 
+    	p ' - - - - - - - - - - - - - '	 
+    	p ''
+
     	if guess_attempt == true
     		letter_place =  @given_word.index(letter_guess) 
      		letter_guess << " " 
     		@masked_word.insert(letter_place, letter_guess) 
     		@masked_word.delete_at(letter_place + 1)
-    		
+    		 puts''
     		 puts 'VOILA! You guessed a correct letter'
+    		 guesses_left = guesses_left + 1
     		 print_masked_word
+             	
+             	if masked_word.join.delete(' ') == given_word.join
+                   puts "YOU GUESSED IT! YOU WIN!!! "
+                   @won_game = true
+                   @finished = true
+                end   
+    		 #when user guesses word?
 
-
-    	else puts "the letter #{letter_guess} is not in this word"
+    	elsif @guesses_bin.include?(letter_guess) == true
+    	 	  puts " YOU HAVE ALREADY GUESSED THE LETTER #{letter_guess}"
+             
+    		 
+    	else puts "THE LETTER #{letter_guess} IS NOT IN THIS WORD"
+    		 guesses_left = guesses_left + 1
     	     print_masked_word
+    	     
     	end 
         puts
         puts
     	puts "the letters you have guessed are: ------> #{guesses_bin.join}"  
         
-    @guesses_left = guesses_left + 1
+    #@guesses_left = guesses_left + 1
+    @guesses_bin.push(letter_guess)
     puts
     puts "PLAYER 2: you have:  #{@limit_of_guesses - @guesses_left} left "
-    #p guesses_left 
-    #p letter_guess
-    #puts @guesses_bin #=>  []
-    #puts @masked_word.join #=>  ["_ ", "_ ", "_ ", "_ ", "_ ", "_ ", "_ "]
-    #p @given_word  #=>  ["c", "l", "o", "v", "e", "r", "s"]
-     
+    #end
+    if guesses_left == number_of_guesses
+    	     	puts "OH NO! PLAYER 2: you are out of guesses."
+                puts "GAME OVER - better luck next time ..."
+                @lost_game = true
+                @finished  = true
+    end     
+     	
+    
    
 end#end of guessing_feedback
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
-
 end	#end of class
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-
 #driver code  --  --  --  --  --  --  --  --  --  --  --  --  --  --
 
 new_game = Game.new 
@@ -124,9 +173,12 @@ new_game.masking_word             #coverts word into blanks
 new_game.spacer
 
 
+until new_game.finished == true #testing currently : finished variable
+	
 
-until new_game.guesses_left == new_game.number_of_guesses
+#until (new_game.guesses_left == new_game.number_of_guesses) # or (new_game.finished == true)
 
+puts "- - - - - - - - - - - - - - - - - - - - - -"
 puts
 puts "PLAYER 2:"
 puts "Guess what letter might be in this word "
@@ -135,8 +187,8 @@ new_game.letter_guess = gets.chomp
 new_game.guessing_feedback
 
 # adjust number of guesses left
-end
-
+#end
+end#testing currently : finished variable
 
 #- - - - - - - - - - - - - - - - - - - - - - - - -
 #new_game.number_of_guesses 
