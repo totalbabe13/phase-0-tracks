@@ -92,7 +92,8 @@ def guessing_feedback
     	puts "the letters you have guessed are: ------> #{guesses_bin.join}"  
         
     @guesses_left = guesses_left + 1
-    p @guesses_left 
+    puts
+    puts "PLAYER 2: you have:  #{@limit_of_guesses - @guesses_left} left "
     #p guesses_left 
     #p letter_guess
     #puts @guesses_bin #=>  []
@@ -109,7 +110,7 @@ end	#end of class
 # - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
-#driver code
+#driver code  --  --  --  --  --  --  --  --  --  --  --  --  --  --
 
 new_game = Game.new 
 
@@ -122,23 +123,6 @@ new_game.given_word = gets.chomp! #gets word from PLAYER 1
 new_game.masking_word             #coverts word into blanks            
 new_game.spacer
 
-
-
-
-
-#var = 0  #
-
-#until var == 10
-
-#p var 
-
-#var = var + 1
-
-#end
-
-
-      #while new_game.guesses_left != new_game.number_of_guesses
-	  #p new_game.guesses_left
 
 
 until new_game.guesses_left == new_game.number_of_guesses
