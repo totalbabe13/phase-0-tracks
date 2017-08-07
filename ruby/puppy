@@ -21,3 +21,16 @@
 #Rolls Over
 #Fetches
 #Wags tail
+
+class Puppy
+
+def initialize 
+end	
+
+end 
+
+button_the_puppy  = Puppy.new
+spot_the_puppy    = Puppy.new
+lassie_the_puppy  = Puppy.new
+bubbles_the_puppy = Puppy.new
+
