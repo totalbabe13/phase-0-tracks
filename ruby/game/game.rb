@@ -19,7 +19,7 @@ def initialize
    
    #@correct_guess= false
 
-   @finished = false      #finished game
+   @finished = false       #finished game
 
 end
 
