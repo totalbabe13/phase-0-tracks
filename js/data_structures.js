@@ -1,5 +1,3 @@
-
-
 var colors = ["Blue", "brown" ,"white", "flourescent orange"];
 color_of_horse = colors[0]
 
@@ -49,44 +47,23 @@ console.log("Our car can run:");
 anothercar.runs();
 console.log("----");
 
-function Car(make, model, year, used) {
-	
-	console.log("Our new car:", this);
-	this.model = model;
-	this.make = make;
-	this.year = year;
-	this.used = used;
 
-	this.runs = function() { console.log("Vrooom!"); };
-	
-	console.log("Car INITIALIZATION COMPLETE");
+function Building(floors, residential, year_made, location){
+
+	console.log("Our new Building is:", this)
+	this.floors = floors;
+	this.residential = residential;
+	this.year_made = year_made;
+	this.location = location;
+
+	this.opens = function() {console.log("Open for buisness!");};
 }
 
-console.log("Let's build a car ...");
+console.log("Lets build a Building...");
 
-var anothercar = new Car("Mazda","Miata", 2017, false);
-console.log(anothercar);
-console.log("Our car can run:");
-anothercar.runs();
-console.log("----");
+var aNewBuilding = new Building(14, true, 1985, "Chicago");
+console.log(aNewBuilding);
+console.log("Our Building can open for buisness every day..")
+aNewBuilding.opens();
 
-function Car(make, model, year, used) {
 	
-	console.log("Our new car:", this);
-	this.model = model;
-	this.make = make;
-	this.year = year;
-	this.used = used;
-
-	this.runs = function() { console.log("Vrooom!"); };
-	
-	console.log("Car INITIALIZATION COMPLETE");
-}
-
-console.log("Let's build a car ...");
-
-var anothercar = new Car("Mitsubishi","Eclipse", 2001, true);
-console.log(anothercar);
-console.log("Our car can run:");
-anothercar.runs();
-console.log("----");
