@@ -103,17 +103,26 @@ key_pair_finder(animal_1, animal_2)
 //==================================================================================
 
 
-function word_inventor(word_num){
+
 
 //1. INPUT = integer for length 
 function word_inventor(word_num){
 //console.log(String.fromCharCode(97,122))
 //a. find method that can convert numbers into letters
 //find method that can randomly generate numbers
-var Crazynumber =Math.floor(Math.random() * (122 - 97 + 1) + 97);
-console.log(Crazynumber);
-var newWord = String.fromCharCode(Crazynumber);
-console.log(newWord)
+//var Crazynumber1 =Math.floor(Math.random() * (122 - 97 + 1) + 97);
+var Crazynumber2 =Math.floor(Math.random() * (10 - 0 + 1) + 1);
+//console.log(Crazynumber1);
+console.log(Crazynumber2);
+var newLetter = String.fromCharCode(Crazynumber1);
+//console.log(newLetter)
+
+for (var i = 0; i < Crazynumber2; i++){
+  var Crazynumber1 =Math.floor(Math.random() * (122 - 97 + 1) + 97);
+  var newLetter = String.fromCharCode(Crazynumber1);
+  console.log(newLetter);  
+} 
+
 
 
 	   //b. do this randomly between 1-10 times.
@@ -126,9 +135,9 @@ console.log(newWord)
 }
 
 word_inventor(3)
-//console.log(String.fromCharCode(97,122))  // returns "ABC")
+//console.log(String.fromCharCode(97,122))  // returns "ABC")mCharCode(97,122))  // returns "ABC")
 
-word_inventor(3)
+
 
 
 
