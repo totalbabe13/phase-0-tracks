@@ -27,23 +27,20 @@ do {
 	        copyArray.splice(0, 1);
          	console.log(copyArray);
          	console.log('')
-  }    
+    } 
+    else  finalArray.push(copyArray[0])
        
-    }
+    }// end of do
     while (copyArray.length !== 1 );
     
     finalArray.push(copyArray[0]);  
     var find = array.indexOf(copyArray[0]);
     array.splice(find,1);
     console.log(finalArray);
-}
+    }
 while(finalArray.length !== array.length);
-
 //finalArray.push(copyArray[0]);
-
-console.log(finalArray);
-  
-  
+console.log(finalArray); 
 }//end of function 
 var originalArray = ['complexities','flowering', 'help me', 'flexible', 'yikes' ];
 phrase_finder(originalArray);
@@ -105,38 +102,31 @@ key_pair_finder(animal_1, animal_2)
 
 //==================================================================================
 
-//Write a function that takes an integer for length, and builds and returns an array of strings of the given length.
-//So if we ran your function with an argument of 3, we would get an array of 3 random words back 
-//(the words don't have to be actual sensical English words -- "nnnnfph" totally counts). 
-//The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. 
-//(This involves a new trick, generating a random number, that you'll have to look up, 
-//but the solution on how to do so is relatively straightforward.)
-//Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
 function word_inventor(word_num){
 
-alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
-	//INPUT = integer for length 
-
-	//. create an array that has three indexes/objects (maybe they are blank string already)
-
-	//. argument word_num would be also the length of array, meaning it contains 3 objects
-
-	
-	  //  create a variable that will hold an array whos index count will be a random
-	  // amount between 1 - 10
-	  
-	  // for each item in array there will be an array inside, who's array.length with invoke 
-	  // the parameter (so the sub arrays below, will take argument/parameter as thier length
-	  // and have random integers in each index that will match with alphabet array?) 
-	  
-	  //word_num array_1 =[ sub_arr1 = [13,9,5], sub_arr2 = [8,1,22], sub_arr3 = [19,11,4] ]
+//1. INPUT = integer for length 
+function word_inventor(word_num){
+//console.log(String.fromCharCode(97,122))
+//a. find method that can convert numbers into letters
+//find method that can randomly generate numbers
+var Crazynumber =Math.floor(Math.random() * (122 - 97 + 1) + 97);
+console.log(Crazynumber);
+var newWord = String.fromCharCode(Crazynumber);
+console.log(newWord)
 
 
-
-   //OUTPUT = 3 random strings
+	   //b. do this randomly between 1-10 times.
+	   //c. join letters to string
+	   //d. store in arrayFinal
+	   
+	 //f. REPEATE 3 times
+	 
+  //2. OUTPUT = 3 random strings
 }
+
+word_inventor(3)
+//console.log(String.fromCharCode(97,122))  // returns "ABC")
 
 word_inventor(3)
 
