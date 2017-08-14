@@ -21,6 +21,10 @@ class VirusPredictor
     speed_of_spread(@population_density, @state)
   end
 
+  def full_report(state_data)
+  print STATE_DATA
+  end  
+
   private
 
   def predicted_deaths(population_density, population, state)
@@ -69,18 +73,35 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+# Right now this is only running a report for 4 states, and it's not incredibly DRY.
+# Create a report for all 50 states in a DRY way. 
+# Does this belong inside the class or outside of it? Why?
+puts
+puts
+puts 'x--x--x--x--x'
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+STATE_DATA.each do |state_name, data|
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+state = VirusPredictor.new(state_name, STATE_DATA["#{state_name}"][:population_density], STATE_DATA["#{state_name}"][:population])
+state.virus_effects
+end
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+puts 'x--x--x--x--x'
+
+#alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+#alabama.virus_effects
+
+#jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+#jersey.virus_effects
+
+#california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+#california.virus_effects
+
+#alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+#alaska.virus_effects
+
+puts 'x--x--x--x--x'
 
 
 #=======================================================================
