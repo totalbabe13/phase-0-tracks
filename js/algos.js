@@ -1,56 +1,54 @@
-//1.create an array with many different length strings
 
-//2.access each string in the array
-//2.a --> call 1 element length in driver code
-//2.b --> count the length of each string
-
-//3. COMPARE with if statement 
-//3.a try writting a bubble sort algorythm
-//3.b use a counter to move through array indexes
-//3.c change index values using operators
- 
- //i = 0 // first value
- //j = 1 // secound value
- //k = 2 // mover
-// l = 0 // index counter
-
- //4. compare lengths of each string 
- //5. larger loop to iterate through all of the word array
 //==================================================================================
 //Release 0   
 function phrase_finder(array){
- for (var l = 0; l < phrase_array.length; l++) {
-	i = 0 // first value
-    j = 1 // secound value
-    k = 2
-	if (phrase_array[i].length > phrase_array[j].length) {
-		//var bigger = phrase_array[i]
-		phrase_array.splice(k,0,phrase_array[i])
-		phrase_array.shift()
-		i = i++;
-		j = j++; 
-		k = k++;
-	} 
-	else if ( phrase_array[i].length < phrase_array[j].length) {
-		i = i++;
-		j = j++; 
-		k = k++;
-	}
-    console.log("- - - - - - - - - ")
-    console.log(i,j,k,l)
-	console.log(phrase_array)
-	
- }
- 
- return console.log(phrase_array[4])
-}
-var phrase_array = ['complexities','flowering', 'help me', 'flexible', 'yikes' ]
-phrase_finder(phrase_array)
+console.log(array);
+console.log('');
+console.log(array[0].length);
+console.log('- - - - - - - - - - - - - -');
+
+//var copyArray = originalArray.slice();
+//console.log(copyArray) --> works
+var finalArray = [];
+//var sizeOfarray = copyArray.length;
+//console.log(copyArray.length);-->works
 
 
-console.log("")
-console.log("")
-console.log("")
+do {
+    var copyArray = originalArray.slice();
+    
+do {
+       if (copyArray[0].length > copyArray[1].length){
+	        copyArray.splice(1, 1);
+	        console.log(copyArray);
+	        console.log('')
+  }
+  else if (copyArray[0].length < copyArray[1].length){
+	        copyArray.splice(0, 1);
+         	console.log(copyArray);
+         	console.log('')
+    } 
+    else  finalArray.push(copyArray[0])
+       
+    }// end of do
+    while (copyArray.length !== 1 );
+    
+    finalArray.push(copyArray[0]);  
+    var find = array.indexOf(copyArray[0]);
+    array.splice(find,1);
+    console.log(finalArray);
+    }
+while(finalArray.length !== array.length);
+//finalArray.push(copyArray[0]);
+console.log(finalArray); 
+}//end of function 
+var originalArray = ['complexities','flowering', 'help me', 'flexible', 'yikes' ];
+phrase_finder(originalArray);
+
+
+console.log("");
+console.log("");
+console.log("");
 
 // COULD NOT FIGURE THIS ONE OUT :( 
 //==================================================================================
@@ -104,30 +102,39 @@ key_pair_finder(animal_1, animal_2)
 
 //==================================================================================
 
+
+
+
+//1. INPUT = integer for length 
 function word_inventor(word_num){
+finalArray =[]
 
-alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+for (var j = 0; j <word_num; j++) {
+// - - - - - - -- - -- - - - - - -
+var Crazynumber2 = Math.floor(Math.random() * (10 - 0 + 1) + 1);
+var wordBuilder =[]
 
-	//INPUT = integer for length 
+for (var i = 0; i < Crazynumber2; i++){
+  var Crazynumber1 = Math.floor(Math.random() * (122 - 97 + 1) + 97);
+  var newLetter = String.fromCharCode(Crazynumber1);
+  
+  wordBuilder.push(newLetter);
+  console.log(newLetter);  
+} 
+var newWord = wordBuilder.join('');
+//console.log(newWord)
+finalArray.push(newWord)
+//finalArray.push(newWord)
 
-	//. create an array that has three indexes/objects (maybe they are blank string already)
-
-	//. argument word_num would be also the length of array, meaning it contains 3 objects
-
-	
-	  //  create a variable that will hold an array whos index count will be a random
-	  // amount between 1 - 10
-	  
-	  // for each item in array there will be an array inside, who's array.length with invoke 
-	  // the parameter (so the sub arrays below, will take argument/parameter as thier length
-	  // and have random integers in each index that will match with alphabet array?) 
-	  
-	  //word_num array_1 =[ sub_arr1 = [13,9,5], sub_arr2 = [8,1,22], sub_arr3 = [19,11,4] ]
-
-
-
-   //OUTPUT = 3 random strings
+	   //d. store in arrayFinal
+	   
+	 //f. REPEATE 3 times
+	 
+  //2. OUTPUT = 3 random strings
 }
+console.log(finalArray)
+}
+//console.log(finalArray)
 
 word_inventor(3)
 
