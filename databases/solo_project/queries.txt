@@ -1,0 +1,50 @@
+SOLO CHALLENGE 8.3 - Leonardo Kaplan
+
+**Display the information in one table (either table is fine).
+- -
+- -
+sqlite> SELECT * FROM galleries;
+1|Kavi Gupta|16|true|1
+2|Heaven Gallery|11|false|2
+3|Peanut Gallery|6|false|3
+4|The Holey|13|true|4
+5|Magent Plainsa|13|true|1
+
+**Update an item that meets some condition (you can choose a condition that makes sense).
+
+- -
+- - 
+sqlite> UPDATE galleries SET name="The Hole" WHERE name="The Holey";
+sqlite> SELECT * FROM galleries;
+1|Kavi Gupta|16|true|1
+2|Heaven Gallery|11|false|2
+3|Peanut Gallery|6|false|3
+4|The Hole|13|true|4
+5|Magent Plainsa|13|true|1
+
+** Display the information in both tables using one query.
+
+ssqlite> SELECT * FROM galleries INNER JOIN cities ON cities.id = galleries.city_id;
+1|Kavi Gupta|16|true|1|1|Chicago
+2|Heaven Gallery|11|false|2|2|Boston
+3|Peanut Gallery|6|false|3|3|Bogota
+4|The Hole|13|true|4|4|Los Angeles
+5|Magent Plainsa|13|true|1|1|Chicago
+
+** Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT galleries.name, cities.name FROM galleries INNER JOIN cities ON cities.id = galleries.city_id;
+Kavi Gupta|Chicago
+Heaven Gallery|Boston
+Peanut Gallery|Bogota
+The Hole|Los Angeles
+Magent Plainsa|Chicago
+
+** Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM galleries WHERE still_open="false";
+sqlite> SELECT * FROM galleries;
+1|Kavi Gupta|23|true|1
+4|The Hills|9|true|4
+5|American Medium|12|true|5
+
