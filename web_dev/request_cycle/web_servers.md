@@ -5,6 +5,8 @@ Write programs that do one thing and do it well.
 Write programs to work together.
 Write programs to handle text streams, because that is a universal interface.
 
+Modularity, re-usability, composablity
+
 ** -> In your own words, what is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?
 
 A VPS could be a block of memory, or some kind of alotted spage that function like a computer. It can have an operating system, it can have files, programs, users. It exists completely in an virtual space.
