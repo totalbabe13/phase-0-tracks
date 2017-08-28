@@ -1,0 +1,30 @@
+body {
+	text-align: center;
+}
+
+#box {
+	height: 200px;
+	width: 200px;
+	background: #fc3;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 200 px;
+}
+
+.thing {
+	height: 200px;
+	width: 200px;
+	background: #ac3;
+	margin: 20px auto;
+	text-align: center;
+	line-height: 200 px;
+	border-top-left-radius: 200px;
+}
+
+button {
+	background: #933;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 18px;
+}
